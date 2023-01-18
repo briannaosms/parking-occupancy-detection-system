@@ -8,7 +8,7 @@ const HOST = String(process.env.HOST);
 const MYSQLHOST = String(process.env.MYSQLHOST);
 const MYSQLUSER = String(process.env.MYSQLUSER);
 const MYSQLPASS = String(process.env.MYSQLPASS);
-const SQL = "SELECT * FROM users;"
+const SQL = "SELECT * FROM parkingLots;"
 
 
 const app = express();
@@ -19,7 +19,7 @@ let connection = mysql.createConnection({
   host: MYSQLHOST,
   user: MYSQLUSER,
   password: MYSQLPASS,
-  database: "users"
+  database: "parkingLots"
 });
 
 
