@@ -1,7 +1,7 @@
 FROM python:3.10.9
 
 # Set the working directory of the container
-WORKDIR /object-detection
+# WORKDIR /home
 
 # Update the software
 RUN apt-get update
@@ -11,30 +11,30 @@ RUN apt-get upgrade -y
 # RUN wget https://github.com/briannaosms/Mask-RCNN-TF2/archive/refs/heads/master.zip -O mask-rcnn.zip && \
     # unzip mask-rcnn.zip && \
     # rm mask-rcnn.zip
-RUN git clone --depth 1 --branch v3.0 https://github.com/briannaosms/Mask-RCNN-TF2.git
+RUN git clone --depth 1 --branch docker-object-detection https://github.com/briannaosms/parking-occupancy-detection-system.git
 
 # Debug
-# CMD [ "bash" ]
-
-# Set the working directory of the container.
-WORKDIR /object-detection/Mask-RCNN-TF2
-
-# Install the prerequisite software.
-RUN pip3 install -r requirements.txt && \
-    python setup.py install
-
-# Download pretrained COCO weights.
-RUN wget https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5
-
-# Install COCO API.
-RUN wget https://github.com/waleedka/coco/archive/refs/heads/master.zip -O coco.zip && \
-    unzip coco.zip && \
-    rm coco.zip && \
-    cd coco-master/PythonAPI && \
-    make
-
-# copy files
-COPY images/ /object-detection/images/
-
-# Run 
 CMD [ "bash" ]
+
+# # Set the working directory of the container.
+# WORKDIR /object-detection/Mask-RCNN-TF2
+
+# # Install the prerequisite software.
+# RUN pip3 install -r requirements.txt && \
+#     python setup.py install
+
+# # Download pretrained COCO weights.
+# RUN wget https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5
+
+# # Install COCO API.
+# RUN wget https://github.com/waleedka/coco/archive/refs/heads/master.zip -O coco.zip && \
+#     unzip coco.zip && \
+#     rm coco.zip && \
+#     cd coco-master/PythonAPI && \
+#     make
+
+# # copy files
+# COPY images/ /object-detection/images/
+
+# # Run 
+# CMD [ "bash" ]
