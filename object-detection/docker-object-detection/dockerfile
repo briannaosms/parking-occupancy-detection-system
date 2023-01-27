@@ -25,10 +25,10 @@ RUN wget https://github.com/waleedka/coco/archive/refs/heads/master.zip -O coco.
     make
 
 # copy files
-COPY images/ /object-detection/images/
+# COPY images/ /object-detection/images/
 
 # Run 
-CMD [ "bash" ]
+# CMD [ "bash" ]
 
 # Debug
 # CMD [ "bash" ]
