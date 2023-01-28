@@ -2,6 +2,7 @@ numpy==1.23.1
 scipy
 Pillow
 cython
+matplotlib
 scikit-image
 tensorflow>=2.0.0
 keras>=2.2.4-tf
@@ -9,5 +10,3 @@ opencv-python-headless
 h5py
 imgaug
 IPython[all]
-python3-tk
-matplotlib
