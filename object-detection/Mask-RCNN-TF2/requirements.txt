@@ -1,7 +1,8 @@
-numpy
+numpy==1.23.1
 scipy
 Pillow
 cython
+python3-tk
 matplotlib
 scikit-image
 tensorflow>=2.0.0
