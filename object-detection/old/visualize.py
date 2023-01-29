@@ -25,7 +25,8 @@ def draw_image_with_boxes(filename, boxes_list):
         ax.add_patch(rect)
 
     # Show the plot
-    pyplot.show()
+    # pyplot.show()
+    pyplot.savefig("output.png")
 
 # Define the test configuration
 class TestConfig(Config):
