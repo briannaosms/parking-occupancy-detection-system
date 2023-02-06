@@ -8,10 +8,10 @@ from backend.serializers import ParkinglotsSerializer
 
 # Create your views here.
 @csrf_exempt
-def parkinglotsAPI(request, lot_name=0):
+def parkinglotsAPI(request, id=0):
     if (request.method == 'GET'):
-        parking = Parkinglots.objects.filter(availability = 1)
-        parking_serializer = ParkinglotsSerializer(parking,many=True)
+        student_parking = Parkinglots.objects.filter(availability = 1)
+        parking_serializer = ParkinglotsSerializer(student_parking,many=True)
         return JsonResponse(parking_serializer.data, safe=False)
     elif (request.method == 'POST'):
         parking_data = JSONParser().parse(request)
@@ -29,6 +29,22 @@ def parkinglotsAPI(request, lot_name=0):
             return JsonResponse("UPDATE SUCCESSFUL",safe=False)
         return JsonResponse("FAILED to UPDATE")
     elif (request.method == 'DELETE'):
-        parking = Parkinglots.objects.get(lot_name = lot_name)
+        parking = Parkinglots.objects.get(spaceID = id)
         parking.delete()
         return JsonResponse("Deleted SUCCESSFULLY",safe=False)
+
+@csrf_exempt
+def pullDatabase(request):
+    if (request.method == 'GET'):
+        whole_database = Parkinglots.objects.all()
+        whole_database_serializer = ParkinglotsSerializer(whole_database, many = True)
+        return JsonResponse(whole_database_serializer.data, safe=False)
+
+@csrf_exempt
+def pullAvailability(request):
+    if (request.method == 'GET'):
+        student_parking_total = Parkinglots.objects.filter(availability = 1).filter(type = 'student').count()
+        faculty_parking_total = Parkinglots.objects.filter(availability = 1).filter(type = 'faculty').count()
+        data = {'student': student_parking_total, 'faculty': faculty_parking_total}
+        return JsonResponse(data)
+

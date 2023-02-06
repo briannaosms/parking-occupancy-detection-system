@@ -1,7 +1,9 @@
-from django.urls import re_path
+from django.urls import path
 from backend import views
 
 urlpatterns=[
-    re_path(r'parkinglots$', views.parkinglotsAPI),
-    re_path(r'parkinglots/(""+)$', views.parkinglotsAPI)
+    path('<id>', views.parkinglotsAPI),
+    path('add/', views.parkinglotsAPI),
+    path('list/', views.pullDatabase),
+    path('ava/', views.pullAvailability),
 ]
