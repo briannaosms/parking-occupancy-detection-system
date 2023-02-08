@@ -1,0 +1,24 @@
+using the commmand line django-admin startproject DjangoAPI i created a django project
+
+using the command line djang-admin startapp backend i created a backend app in the django project
+
+in the backend app i created a views.py file which is the file that handels all of the database queries
+
+i also created a urls.py file which handles all of the url pathing for the webserver
+
+In the settings.py file I added a connection in the database section for creating a connection to the MYSQL database
+
+in the DjangoAPI project directory in the urls.py file I added an import to the top called include which will allow me to include urls.py files from other apps
+
+in the urls.py file of the DjangoAPI directory I added a path called path("/database", inlcude("backend.urls"))
+this allows for the webserver to use the urls.py file that is associated with the backend app
+
+In the urls.py file in the backend directory I added many different url paths that will be accessed when the url gets a /database/<whatever> request it will use that path the run a function in the views.py file for example. in the urls.py file a path would look like path("list/", views.pullDatabase) this will mean that the pulldatabase function in the views.py file will be used when the web url tries to access it http://localhost/database/list/
+
+With this being said: The API is a basic CRUD api C for create R for replace U for update D for delete
+
+The server is ran by running python3 manage.py runserver in the DjangoAPI directory
+
+and using the postman application you can send http request to the different urls.
+
+for example in postman you can send a get request to 127.0.0.1:8000/database/ava/ which will return the total available spots for each parking space type.
