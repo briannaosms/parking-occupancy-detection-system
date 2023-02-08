@@ -17,7 +17,9 @@ RUN unzip docker-object-detection.zip && \
 WORKDIR /pods/object-detection/Mask-RCNN-TF2
 
 # Install the prerequisite software.
-RUN pip3 install -r requirements.txt && \
+RUN apt-get install python3-tk -y && \
+    pip3 install -r requirements.txt && \
+    pip3 install docutils==0.19 && \
     python setup.py install
     
 # Download pretrained COCO weights.
@@ -31,7 +33,7 @@ RUN unzip master.zip && \
     make
  
 # Copy testing images from host machine.
-COPY images/ /pods/object-detection/images/
+COPY /images/ /pods/object-detection/images/
 
 # [DEV] #
 # Run command line. 
