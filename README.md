@@ -2,18 +2,30 @@
 
 ## Object Detection
 ### About
-`/pods/object-detection` contains the directories `/docker` and `/Mask-RCNN-TF2`.
-- `/docker` contains a docker file that automates the testing enviroment
-- `/Mask-RCNN-TF2` contains the MRCNN object detection repository
+`/pods/object-detection` contains the directories `/docker` and `/Mask-RCNN-TF2`
+- `/docker` contains a docker file that automates the testing enviroment and configuration for the Visual Studio Code Extension Remote Containers
+- `/Mask-RCNN-TF2` contains the MRCNN object detection repository and sample code for the project
+  - `main.py` is the developing object detection program. Make a copy of this program then add your changes.
+  - `demo.py` is the object detection program used for the sprint 2 retrospective presentation. Its purpose was to demonstrate the detected parking spots and missing vehicles.
+  - If you need help to understand how the object detection algorithm is used, the programs `main.py`, `demo.py`, and `object-detect.py` can help.
+
+### Prequisites
+**To run the object detection program on your computer, you need a NVIDIA graphics card.**
+
+**Prerequisites for host computer or VM that will run docker:**
+1. Ensure your Linux distribution is supported here in the [NVIDIA Toolkit installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).
+2. Run `ubuntu-drivers devices` in a terminal. 
+3. Look for the recommended NVIDIA driver and install it. For example, if my recommended driver is nvidia-driver-525, then I will install that driver using the command `sudo apt install nvidia-driver-525`.
+4. Install the utilities for the recommended driver using the command `sudo apt install nvidia-utils-525`.
+5. Follow the steps of the [Setting up NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html) in the installation guide.
+
 
 ### Setup
-**A NVIDIA GPU is required to use the object detection algorithm.**
-To use the object detection algorithm, do the following:
+**To use the object detection algorithm, do the following:**
 1. Navigate the the directory containing the dockerfile: `pods/object-detection/docker/`.
-2. Run the command `docker build -t pods .`
-3. Run the command `docker run --gpus=all --rm pods python object-detect.py`
-4. Open another terminal and run the command `docker ps`. This will show the running containers. 
-5. The object detection script has saved its results to `output.jpg` in the `Mask-RCNN-TF2/` directory. Run the command `docker cp <container-id>:pods/object-detection/Mask-RCNN-TF2/output.jpg src-path/`. Replace `<container-id>` with the first 4 characters in the container ID (from the last step). Replace `src-path/` with your specified save path for the results. For example, if the container id is `cf62`, then the command will be `docker cp cf62:pods/object-detection/Mask-RCNN-TF2/output.jpg ~/Documents/`.
+2. Run the command `docker build -t object-detection .`
+3. Run the command `docker run --gpus=all -it --rm object-detection`
+4. In the docker container, run the command `python <program-name>` in the docker container where `<program-name>` is replaced by a program. A working example is `demo.py`, to run it use the command `python demo.py`.
 
 ## Website Login Automation
 ### About

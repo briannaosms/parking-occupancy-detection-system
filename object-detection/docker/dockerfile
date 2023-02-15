@@ -35,6 +35,9 @@ RUN unzip master.zip && \
 # Copy testing images from host machine.
 COPY /images/ /pods/object-detection/images/
 
+# Run a terminal
+CMD [ "bash" ]
+
 # [DEV] #
 # Run command line. 
 # RUN python object-detect.py
