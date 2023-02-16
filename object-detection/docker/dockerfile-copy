@@ -4,6 +4,20 @@ FROM tensorflow/tensorflow:latest-gpu
 # Update the software
 RUN apt-get update
 RUN apt-get upgrade -y
+RUN apt-get -y install python3-tk
+RUN pip3 install numpy==1.23.1 \
+                 scipy \
+                 Pillow \
+                 cython \
+                 matplotlib \
+                 scikit-image \
+                 tensorflow>=2.0.0 \
+                 keras>=2.2.4-tf \
+                 opencv-python-headless \
+                 h5py \
+                 imgaug \
+                 IPython[all] \
+                 docutils==0.19
 
 # Retrieve the repository. "ADD" is used here instead of "RUN git clone" to retreive new commits.
 ADD https://github.com/briannaosms/parking-occupancy-detection-system/archive/refs/heads/docker-object-detection.zip /
@@ -17,10 +31,7 @@ RUN unzip docker-object-detection.zip && \
 WORKDIR /pods/object-detection/Mask-RCNN-TF2
 
 # Install the prerequisite software.
-RUN apt-get install python3-tk -y && \
-    pip3 install -r requirements.txt && \
-    pip3 install docutils==0.19 && \
-    python setup.py install
+RUN python setup.py install
     
 # Download pretrained COCO weights.
 ADD https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5 /pods/object-detection/Mask-RCNN-TF2
@@ -32,8 +43,8 @@ RUN unzip master.zip && \
     cd coco-master/PythonAPI && \
     make
  
-# Run a terminal
-CMD [ "bash" ]
+# Copy testing images from host machine.
+COPY /images/ /pods/object-detection/images/
 
 # [DEV] #
 # Run command line. 
