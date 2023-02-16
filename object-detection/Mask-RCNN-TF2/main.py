@@ -96,8 +96,8 @@ def draw_box(ax, box, col):
 def main():
     # [SETUP] Define file names.
     model_weights_filename = "mask_rcnn_coco.h5"
-    image_filename = "../images/pl-cropped.jpg"
-    image2_filename = "../images/pl-cropped-edited.jpg"
+    image_filename = "pl-images/pl-cropped.jpg"
+    image2_filename = "pl-images/pl-cropped-edited.jpg"
     parking_boxes = []
 
     # Load the image.

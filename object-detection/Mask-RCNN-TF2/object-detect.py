@@ -39,7 +39,7 @@ def main():
     rcnn.load_weights("mask_rcnn_coco.h5", by_name=True)
 
     # Load image
-    img_filename = "../images/parking-lot-2.jpg"
+    img_filename = "pl-images/parking-lot-2.jpg"
     img = load_img(img_filename)
     img = img_to_array(img)
 
