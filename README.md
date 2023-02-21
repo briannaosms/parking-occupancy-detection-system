@@ -2,17 +2,22 @@
 
 ## Object Detection
 ### About
-`/pods/object-detection` contains the directories `/docker` and `/Mask-RCNN-TF2`
-- `/docker` contains a docker file that automates the testing enviroment and configuration for the Visual Studio Code Extension Remote Containers
-- `/Mask-RCNN-TF2` contains the MRCNN object detection repository and sample code for the project
-  - `main.py` is the developing object detection program. Make a copy of this program then add your changes.
+`/pods/object-detection/` contains the directories `datasets/`, `images/`, `mrcnn-reqs/`, `output/` and `src/`. The directories  `datasets/`, `images/`, `output/` and `src`are mounted volume in the docker container.
+- `datasets/` containes training and testing datasets for the object detection algorithms. This directory is excluded by the `.gitignore` file, so it serves as a storage location for those datasets without tracking 5 GB+ of data in the repository.
+- `images/` contains images of the Nethken parking lot used for testing and demonstration purposes. 
+- `mrcnn-reqs` contains files used to build the Mask RCNN (MRCNN) object detection library.
+- `output/` contains resulting images produced by the object detection algorihtms.
+- `src/` contains the source code to use, train, and test the object detection algorithms.
+  - `samples/` contains sample source code from the MRCNN repositiory.
+  - `main.py` is the main developing object detection program. Make a copy of this program then add your changes.
   - `demo.py` is the object detection program used for the sprint 2 retrospective presentation. Its purpose was to demonstrate the detected parking spots and missing vehicles.
   - If you need help to understand how the object detection algorithm is used, the programs `main.py`, `demo.py`, and `object-detect.py` can help.
+- `dockerfile` is used to build the container enviroment for using, training, and testing the object detection algorithms. 
 
 ### Prequisites
-**To run the object detection program on your computer, you need a NVIDIA graphics card.**
+**To run the object detection program on your computer, a NVIDIA graphics card is required.**
 
-**Prerequisites for host computer or VM that will run docker:**
+**Prerequisites for a Linux host computer or Linux VM that will run docker:**
 1. Ensure your Linux distribution is supported here in the [NVIDIA Toolkit installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).
 2. Run `ubuntu-drivers devices` in a terminal. 
 3. Look for the recommended NVIDIA driver and install it. For example, if my recommended driver is nvidia-driver-525, then I will install that driver using the command `sudo apt install nvidia-driver-525`.
@@ -22,10 +27,10 @@
 
 ### Setup
 **To use the object detection algorithm, do the following:**
-1. Navigate the the directory containing the dockerfile: `pods/object-detection/docker/`.
-2. Run the command `docker build -t object-detection .`
-3. Run the command `docker run --gpus=all -it --rm object-detection`
-4. In the docker container, run the command `python <program-name>` in the docker container where `<program-name>` is replaced by a program. A working example is `demo.py`, to run it use the command `python demo.py`.
+1. Ensure your current directory is in root directory `pods/`. Use the command `docker-compose build` to build the dockerfile.
+2. Use the command `docker-compose up -d` to start the docker container.
+3. To use the docker container, use the command `docker exec -it object-detection /bin/bash`.
+3. A shell will appear in the docker container. Navigate to the `src/` directory to run source code. Run the command `python <program-name>` in the docker container where `<program-name>` is replaced by a program. A working example is `demo.py`, to run it use the command `python demo.py`.
 
 ## Website Login Automation
 ### About

@@ -1,0 +1,30 @@
+FROM tensorflow/tensorflow:latest-gpu
+
+# Update the software
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install python3-tk -y
+
+# RUN groupadd -r user && useradd -r -g user user
+# USER user
+
+# Set the working directory and copy the required build files
+WORKDIR /app
+COPY mrcnn-reqs/ ./
+
+# Install requirements
+RUN pip3 install -r requirements.txt
+
+# Download the pretrained COCO weights
+ADD https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5 .
+RUN chmod 777 mask_rcnn_coco.h5
+
+# Download and install the COCO API
+ADD https://github.com/waleedka/coco/archive/refs/heads/master.zip .
+RUN unzip master.zip && \
+    rm master.zip && \
+    cd coco-master/PythonAPI && \
+    make
+
+# Install mrcnn
+RUN python setup.py install
