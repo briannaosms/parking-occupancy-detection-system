@@ -1,0 +1,22 @@
+version: '3'
+services:
+  object-detection:
+    container_name: object-detection
+    build: ./object-detection
+    environment:
+      - PYTHONPATH=:/app
+    user: 1000:1000
+    volumes:
+      - ./object-detection/datasets:/app/datasets:ro
+      - ./object-detection/images:/app/images:ro
+      - ./object-detection/src:/app/src:rw
+      - ./object-detection/output:/app/output:rw
+    stdin_open: true
+    tty: true 
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
