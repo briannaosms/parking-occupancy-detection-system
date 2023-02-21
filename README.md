@@ -2,8 +2,8 @@
 
 ## Object Detection
 ### About
-`/pods/object-detection/` contains the directories `datasets/`, `images/`, `mrcnn-reqs/`, `output/` and `src/`. The directories  `datasets/`, `images/`, `output/` and `src`are mounted volume in the docker container.
-- `datasets/` containes training and testing datasets for the object detection algorithms. This directory is excluded by the `.gitignore` file, so it serves as a storage location for those datasets without tracking 5 GB+ of data in the repository.
+`/pods/object-detection/` contains the directories `datasets/`, `images/`, `mrcnn-reqs/`, `output/` and `src/`. The directories  `datasets/`, `images/`, `output/` and `src/` are mounted volumes in the docker container.
+- `datasets/` containes training and testing datasets for the object detection algorithms. This directory is excluded by the `.gitignore` file, so it serves as a storage location for those datasets without tracking large amounts of data in the repository.
 - `images/` contains images of the Nethken parking lot used for testing and demonstration purposes. 
 - `mrcnn-reqs` contains files used to build the Mask RCNN (MRCNN) object detection library.
 - `output/` contains resulting images produced by the object detection algorihtms.
