@@ -109,7 +109,7 @@ def main():
         
         # Function call that passes url, element ID names, and element ID values
         # First argument is IP address that has to be hardcoded once camera is connected to network
-        login("http://192.168.1.206/", "username", al.my_admin_username, "password", al.my_admin_password, "b_login")
+        la.login("http://138.47.102.221/", "username", la.my_admin_username, "password", la.my_admin_password, "b_login")
         sleep(3)
 
         image_filename = imr.get_latest_image("")
