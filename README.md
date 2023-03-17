@@ -55,3 +55,13 @@ Automation is powered by the following steps:
   - Run `python manage.py runserver` to start server
     - If Django error occurs, then make sure to `pip install django`
   - Visit the local host ip address to view the page
+
+## Hardware
+### Materials
+- The camera system consists of a concrete base, pvc tubing, 1"x4" piece of wood, and the camera itself.
+  - Concrete base -> An 80 lbs bag of quickset cement hand-poured into a 2'x3' mold with a 3-way connector pipe set in the center.
+  - Pvc tubing -> 3-way connector pipe set in concrete, 5' long pvc pipe (3" diameter), and a cap for the pipe. All pieces of pvc were secured with pvc glue.
+  - Wood -> 1"x4" piece of wood fastened to the pvc pipe via two standard U-bolts.
+  - Camera -> An outdoor PoE camera screwed into the wood on the mount and tightened for the best viewing angle.
+<img src="Images/installed_camera.jpg" width=200> <img src="Images/camera_pov.jpg" width=200> <img src="Images/pole_structure.jpg" width=200> <img src="Images/mount_base.jpg" width=200>
+
