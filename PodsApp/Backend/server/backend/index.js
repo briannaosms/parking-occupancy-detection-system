@@ -25,6 +25,10 @@ let connection = mysql.createConnection({
 
 app.use("/", express.static("frontend"));
 
+app.get("/api", (req, res) => {
+  res.json({"users": ["u1", "u2","u3", "hello"]})
+})
+
 
 app.get("/query", function (request, response) {
   connection.query(SQL, [true], (error, results, fields) => {
