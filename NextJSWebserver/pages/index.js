@@ -10,7 +10,7 @@ export default function Home() {
     <h1>Parking Lot Occcupany Detection System (PODS)</h1>
     <div className={styles.grid}>
           <a
-          href="/lots"
+          href="/details"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
