@@ -3,7 +3,7 @@ FROM tensorflow/tensorflow:latest-gpu
 # Update the software
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install python3-tk -y
+RUN apt-get install python3-tk python3-dev -y
 
 # RUN groupadd -r user && useradd -r -g user user
 # USER user
