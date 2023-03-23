@@ -20,6 +20,10 @@ function Details() {
         <Layout home>
         <Head>
             <title>{siteTitle}</title>
+            <script 
+                src="https://kit.fontawesome.com/2ce1107d3a.js" 
+                crossorigin="anonymous"
+            ></script>
         </Head>
         <section className={utilStyles.headingLg}>
             <h1>Nethken Lot</h1>
