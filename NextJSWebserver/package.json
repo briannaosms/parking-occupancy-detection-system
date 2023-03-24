@@ -11,12 +11,10 @@
   "dependencies": {
     "@next/font": "13.1.6",
     "cdbreact": "^1.5.10",
-    "chart.js": "^2.9.4",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-burger-menu": "^3.0.9",
     "react-dom": "18.2.0"
   },
   "devDependencies": {

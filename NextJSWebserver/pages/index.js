@@ -1,14 +1,19 @@
 import Link from 'next/link';
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Main.module.css'
+import Head from "next/head"
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <>
-    <h1>Parking Lot Occcupany Detection System (PODS)</h1>
-    <div className={styles.grid}>
+    <Head>
+      <link rel="icon" href="/latech.ico"/>
+      <title>Home</title>
+    </Head>
+    <h1 className={styles.context}>Parking Occcupany Detection System (PODS)</h1>
+    <div className={styles.card}>
           <a
           href="/lots"
           className={styles.card}
@@ -16,15 +21,14 @@ export default function Home() {
           rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Available Parking <span>-&gt;</span>
+              Available Parking
             </h2>
             <p className={inter.className}>
               Find available parking lots.
             </p>
           </a>
-          
-        </div>
-        <div className={styles.grid}>
+    </div>
+    <div className={styles.card}>
           <a
             href="/stats"
             className={styles.card}
@@ -32,7 +36,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Parking Lot Activity <span>-&gt;</span>
+              Parking Lot Activity
             </h2>
             <p className={inter.className}>
               Find past parking lot activity.
@@ -40,7 +44,7 @@ export default function Home() {
           </a>
           </div>
 
-          <div className={styles.grid}>
+          <div className={styles.card}>
           <a
             href="/help"
             className={styles.card}
@@ -48,13 +52,23 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Help <span>-&gt;</span>
+              Help
             </h2>
             <p className={inter.className}>
-              Read the documentation for the project.
+              Read more about the project.
             </p>
           </a>
+          <br/>
+
+
+          <p className={inter.className}>
+            <b>Team Ctrl-Alt-Elites</b>
+            <br/>
+            Corey Belk-Scroggins, Brianna Stewart,
+            <br/>Garrett Jones, and Landon Tomkins
+            </p>
         </div>
+        
     </>
   );
 }

@@ -1,9 +1,14 @@
 import Image from'next/image';
 import lots from '../styles/lots.module.css'
+import Head from "next/head"
 
 function Details() {
     return (
         <>
+        <Head>
+      <link rel="icon" href="/latech.ico"/>
+      <title>Nethken Parking</title>
+    </Head>
             {/* browser tab name */}
             <title>Nethken Parking</title>
             
@@ -26,7 +31,7 @@ function Details() {
                 <Image
                     src="/parking-lot.jpg"
                     height={250}
-                    width={440}
+                    width={250}
                     alt="Nethken Parking Lot Map"
                 />
 
@@ -35,10 +40,11 @@ function Details() {
                     <label className={lots.timeLabel}>
                         Last updated at
                     </label>
-                    <input type="time"
-                            value="08:00:00"
+                    <input type="text"
+                            value="8:30 AM"
                             className={lots.timeBox}
-                            readOnly/>
+                            readOnly 
+                            />
                 </form>
                 <br/>
 
