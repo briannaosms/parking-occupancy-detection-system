@@ -26,6 +26,14 @@
     padding-bottom: 50px;
   }
 
+  .border {
+    text-align: center;
+    border: solid;
+    border-width: 3px;
+    align-items: center;
+    width: 400px;
+    margin: auto;
+  }
 
   .grid {
     display: grid;

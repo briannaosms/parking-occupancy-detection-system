@@ -20,12 +20,14 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
           >
+            <div className={styles.border}>
             <h2 className={inter.className}>
               Available Parking
             </h2>
             <p className={inter.className}>
               Find available parking lots.
             </p>
+            </div>
           </a>
     </div>
     <div className={styles.card}>
@@ -35,12 +37,14 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <div className={styles.border}>
             <h2 className={inter.className}>
               Parking Lot Activity
             </h2>
             <p className={inter.className}>
               Find past parking lot activity.
             </p>
+            </div>
           </a>
           </div>
 
@@ -51,12 +55,14 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <div className={styles.border}>
             <h2 className={inter.className}>
               Help
             </h2>
             <p className={inter.className}>
               Read more about the project.
             </p>
+            </div>
           </a>
           <br/>
 
