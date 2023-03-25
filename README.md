@@ -1,5 +1,11 @@
 # Parking Occupancy Detection System (PODS)
 
+## Website 
+To run the front end, ensure you have Node.JS installed. 
+1. Run `npm install` in the `NextJSWebserver` directory.
+2. Install tailwind with the command `npm install -D tailwindcss postcss autoprefixer`.
+3. Run `npm run dev` and access the website via the localhost IP (localhost:3000)
+
 ## Object Detection
 ### About
 `/pods/object-detection/` contains the directories `datasets/`, `images/`, `mrcnn-reqs/`, `output/` and `src/`. The directories  `datasets/`, `images/`, `output/` and `src/` are mounted volumes in the docker container.
@@ -46,12 +52,3 @@ Automation is powered by the following steps:
 2. Open an instance of Google Chrome using the Selenium Webdriver framework.
 3. Search the webpage by element to send the key values to the appropriate field and click the submit button.
 4. Search the webpage's html file for main stream video element then copy and store its data to local storage as a .png.
-
-## PodsApp
-- Folder contains the skeleton files that are needed to begin development of the application on our local host.
-- In order to test, the following should be done.
-  - Be sure to pull from main.
-  - In terminal navigate into PodsApp directory that contains manage.py
-  - Run `python manage.py runserver` to start server
-    - If Django error occurs, then make sure to `pip install django`
-  - Visit the local host ip address to view the page
