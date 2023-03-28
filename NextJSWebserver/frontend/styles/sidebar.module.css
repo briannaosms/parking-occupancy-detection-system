@@ -1,0 +1,73 @@
+/* position and sizing of burger button */
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+}
+
+/* color and shape of burger icon bars */
+.bm-burger-bars {
+    background: #373a47;
+}
+
+/* color and shape of burger icon on hover */
+.bm-burger-bars-hover {
+    background: #a90000;
+}
+
+/* position and sizing of clickable cross button */
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+}
+
+/* color and shape of close button cross */
+.bm-cross {
+    background: #bdc3c7;
+}
+
+/* sidebar wrapper styles */
+.bm-menu-wrap {
+    position: fixed;
+    height: 100%
+}
+
+/* general sidedar styles */
+.bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+}
+
+/* morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+    fill: #373a47;
+}
+
+/* wrapper from item list */
+.bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+}
+
+/* individual item */
+.bm-item {
+    display: inline-block;
+
+    color: #d1d1d1;
+    margin-bottom: 10px;
+    text-align: left;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.bm-item:hover {
+    color: #ffffff;
+}
+
+/* styling of overlay */
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}

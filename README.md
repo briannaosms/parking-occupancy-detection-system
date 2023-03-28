@@ -1,5 +1,11 @@
 # Parking Occupancy Detection System (PODS)
 
+## Website 
+To run the front end, ensure you have Node.JS installed. 
+1. Run `npm install` in the `NextJSWebserver` directory.
+2. Install tailwind with the command `npm install -D tailwindcss postcss autoprefixer`.
+3. Run `npm run dev` and access the website via the localhost IP (localhost:3000)
+
 ## Object Detection
 ### About
 `/pods/object-detection/` contains the directories `datasets/`, `images/`, `mrcnn-reqs/`, `output/` and `src/`. The directories  `datasets/`, `images/`, `output/` and `src/` are mounted volumes in the docker container.
