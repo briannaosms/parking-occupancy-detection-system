@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Chart } from 'chart.js';
+import { Chart } from 'chart.js/auto';
 import Head from "next/head"
 
 import lots from '../styles/lots.module.css'
@@ -83,6 +83,8 @@ var fridayOptions = {
 
 function Bar() {
     useEffect(() => {
+        // var test = document.getElementById("0").getContext('2d');
+        // test.destroy();
         // monday chart
         var mondayCtx = document.getElementById('mondayChart').getContext('2d');
         var mondayChart = new Chart(mondayCtx, {
