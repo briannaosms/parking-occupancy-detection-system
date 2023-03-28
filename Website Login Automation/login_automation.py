@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import yaml
 import time
+import sys
 
 # With statement to open, read, load, and close the stream containing login credentials
 with open('login_credentials.yml', 'r') as f:
@@ -45,7 +46,24 @@ def get_Image():
         image = browser.find_element(By.ID, "h5player")
         # Save the data of the image web element locally
         g.write(image.screenshot_as_png)
+        return image.screenshot_as_png
 
 # Function call that passes url, element ID names, and element ID values
-# First argument is IP address that has to be hardcoded once camera is connected to network
-login("http://192.168.1.206/", "username", my_admin_username, "password", my_admin_password, "b_login")
+# First argument is IP address that has to be hardcoded once camera is connectedto network
+def main(interval):
+      login("http://138.47.102.163/", "username", my_admin_username, "password", my_admin_password, "b_login")
+
+      while(True):
+         get_Image()
+         time.sleep(interval)
+
+if __name__ == "__main__":
+   try:
+      print("Time interval set to {} secs".format(sys.argv[1]))
+      main(int(sys.argv[1]))
+   except IndexError:
+      print("No time given, defualting interval to 60 secs")
+      main(60)
+
+
+

@@ -1,0 +1,10 @@
+.chart {
+    overflow: auto;
+    margin-left: 100px;
+    padding-top: 40px;
+}
+
+.chart h2 {
+    padding-left: 10px;
+    text-decoration: none;
+}
