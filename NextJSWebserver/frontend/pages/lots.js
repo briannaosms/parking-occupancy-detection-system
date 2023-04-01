@@ -3,7 +3,6 @@ import Head from "next/head"
 
 import lots from '../styles/lots.module.css';
 import Sidebar from './sidebar';
-import sidebar from '../styles/Sidebar.module.css';
 
 function Lots() {
 	return (
@@ -14,11 +13,8 @@ function Lots() {
 				<title>Available Parking</title>
 			</Head>
 			
-			<div className='sidebar' id="outter-container">
-				<Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-			</div>
-
-
+			<Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>
+			
 
 			{/* sidebar
 			<div className={lots.sidebar}>
