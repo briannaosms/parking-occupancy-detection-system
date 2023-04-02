@@ -38,6 +38,11 @@ To run the front end, ensure you have Node.JS installed.
 3. To use the docker container, use the command `docker exec -it object-detection /bin/bash`.
 3. A shell will appear in the docker container. Navigate to the `src/` directory to run source code. Run the command `python <program-name>` in the docker container where `<program-name>` is replaced by a program. A working example is `demo.py`, to run it use the command `python demo.py`.
 
+### Database
+To connect to the database container, run the `run-sql.sh` script in `/object-detection/`.
+
+To use MySQL Workbench to connect to the MySQL container, you have to be on the same wifi network as the computer running the container.
+
 ## Website Login Automation
 ### About
 - Folder contains three files that are responsible for automating the process required to login into the PoE camera system.
