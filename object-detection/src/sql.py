@@ -1,11 +1,17 @@
 import mysql.connector
 
+
+#only works on same wifi network
+# docker exec -it mysql /bin/sh -c "mysql -u root -ppassword"
 # establishing the connection
+print("starting conn...")
 conn = mysql.connector.connect(
-   user='root', password='password', host='138.47.149.20', database='ParkingLot')
+   user='root', password='password', host='mysql', database='ParkingLot')
+print("conn succesful")
 
 # Creating a cursor object using the cursor() method
 cursor = conn.cursor()
+print("cursor")
 
 sql = """
     INSERT INTO ParkingLot(
@@ -22,5 +28,7 @@ except:
     conn.rollback()
 
 print("data inserted")
+
+
 
 conn.close()
