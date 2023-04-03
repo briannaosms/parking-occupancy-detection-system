@@ -1,2 +1,3 @@
 # ignore the object detection training/testing datasets
 /object-detection/datasets/
+/database/data/
