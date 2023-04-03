@@ -5,6 +5,8 @@ import Head from "next/head"
 import lots from '../styles/lots.module.css'
 import stats from '../styles/stats.module.css'
 
+import Sidebar from './sidebar';
+
 // monday chart data
 var mondayData = {
     labels: ["7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"],
@@ -86,6 +88,7 @@ function Bar() {
         // var test = document.getElementById("0").getContext('2d');
         // test.destroy();
         // monday chart
+        
         var mondayCtx = document.getElementById('mondayChart').getContext('2d');
         var mondayChart = new Chart(mondayCtx, {
             type: 'line',
@@ -127,14 +130,15 @@ function Bar() {
                 <title>Parking Statistics</title>
             </Head>
             
+            <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>
 
-            {/* sidebar */}
+            {/* sidebar
             <div className={lots.sidebar}>
                 <a className='active' href='/'>Home</a>
                 <a href='/lots'>Available Parking</a>
                 <a href='/stats'>Parking Statistics</a>
                 <a href='/help'>Help</a>
-            </div>
+            </div> */}
 
 
             {/* navbar title */}

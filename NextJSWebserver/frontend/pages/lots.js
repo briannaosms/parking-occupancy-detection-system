@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Head from "next/head"
 
-import lots from '../styles/lots.module.css'
+import lots from '../styles/lots.module.css';
+import Sidebar from './sidebar';
 
 function Lots() {
 	return (
@@ -12,14 +13,16 @@ function Lots() {
 				<title>Available Parking</title>
 			</Head>
 			
+			<Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>
+			
 
-			{/* sidebar */}
+			{/* sidebar
 			<div className={lots.sidebar}>
 				<a className='active' href='/'>Home</a>
 				<a href='/lots'>Available Parking</a>
 				<a href='/stats'>Parking Statistics</a>
 				<a href='/help'>Help</a>
-			</div>
+			</div> */}
 
 			{/* navbar title */}
 			<div className={lots.navbar}>

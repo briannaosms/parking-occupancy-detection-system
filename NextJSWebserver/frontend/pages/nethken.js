@@ -2,6 +2,7 @@ import Image from'next/image'
 import Head from 'next/head'
 
 import lots from '../styles/lots.module.css'
+import Sidebar from './sidebar';
 
 function Details() {
     return (
@@ -13,13 +14,7 @@ function Details() {
             </Head>
 
 
-            {/* sidebar */}
-            <div className={lots.sidebar}>
-                <a className='active' href='/'>Home</a>
-                <a href='/lots'>Available Parking</a>
-                <a href='/stats'>Parking Statistics</a>
-                <a href='/help'>Help</a>
-            </div>
+            <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>
         
 
             {/* navbar title */}
