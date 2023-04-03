@@ -32,10 +32,10 @@ var styles = {
     top: '10px'
   },
   bmBurgerBars: {
-    background: '#373a47'
+    background: '#676767'
   },
   bmBurgerBarsHover: {
-    background: '#a90000'
+    background: '#676767'
   },
   bmCrossButton: {
     height: '24px',
@@ -49,15 +49,15 @@ var styles = {
     height: '100%'
   },
   bmMenu: {
-    background: '#373a47',
+    background: '#676767',
     padding: '2.5em 1.5em 0',
     fontSize: '1.15em'
   },
   bmMorphShape: {
-    fill: '#373a47'
+    fill: '#676767'
   },
   bmItemList: {
-    color: '#b8b7ad',
+    color: 'black',
     padding: '0px'
   },
   bm_Item: {

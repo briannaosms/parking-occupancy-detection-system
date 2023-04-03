@@ -88,6 +88,7 @@ function Bar() {
         // var test = document.getElementById("0").getContext('2d');
         // test.destroy();
         // monday chart
+        
         var mondayCtx = document.getElementById('mondayChart').getContext('2d');
         var mondayChart = new Chart(mondayCtx, {
             type: 'line',
