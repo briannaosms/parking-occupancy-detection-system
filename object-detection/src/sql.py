@@ -1,6 +1,5 @@
 import mysql.connector
 
-
 #only works on same wifi network
 # docker exec -it mysql /bin/sh -c "mysql -u root -ppassword"
 # establishing the connection
