@@ -90,6 +90,10 @@ function Bar() {
         // monday chart
         
         var mondayCtx = document.getElementById('mondayChart').getContext('2d');
+        let mondayChartStatus = Chart.getChart("mondayChart");
+        if (mondayChartStatus != undefined) {
+            mondayChartStatus.destroy();
+        }
         var mondayChart = new Chart(mondayCtx, {
             type: 'line',
             data: mondayData
@@ -97,6 +101,10 @@ function Bar() {
 
         // tuesday chart
         var tuesdayCtx = document.getElementById('tuesdayChart').getContext('2d');
+        let tuesdayChartStatus = Chart.getChart("tuesdayChart");
+        if (tuesdayChartStatus != undefined) {
+            tuesdayChartStatus.destroy();
+        }
         var tuesdayChart = new Chart(tuesdayCtx, {
             type: 'line',
             data: tuesdayData
@@ -104,18 +112,30 @@ function Bar() {
 
 
         var wednesdayCtx = document.getElementById('wednesdayChart').getContext('2d');
+        let wednesdayChartStatus = Chart.getChart("wednesdayChart");
+        if (wednesdayChartStatus != undefined) {
+            wednesdayChartStatus.destroy();
+        }
         var wednesdayChart = new Chart(wednesdayCtx, {
             type: 'line',
             data: wednesdayData
         });
 
         var thursdayCtx = document.getElementById('thursdayChart').getContext('2d');
+        let thursdayChartStatus = Chart.getChart("thursdayChart");
+        if (thursdayChartStatus != undefined) {
+            thursdayChartStatus.destroy();
+        }
         var thursdayChart = new Chart(thursdayCtx, {
             type: 'line',
             data: thursdayData
         });
 
         var fridayCtx = document.getElementById('fridayChart').getContext('2d');
+        let fridayChartStatus = Chart.getChart("fridayChart");
+        if (fridayChartStatus != undefined) {
+            fridayChartStatus.destroy();
+        }
         var fridayChart = new Chart(fridayCtx, {
             type: 'line',
             data: fridayData

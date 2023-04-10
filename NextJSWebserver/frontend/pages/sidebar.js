@@ -1,5 +1,5 @@
 import React from 'react';
-import { elastic as Menu } from 'react-burger-menu';
+import { push as Menu } from 'react-burger-menu';
 
 
 export default props => {
