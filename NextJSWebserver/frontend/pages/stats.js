@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Chart } from 'chart.js/auto';
 import Axios from 'axios';
 import Head from "next/head"
@@ -24,16 +24,18 @@ function Bar() {
 
 
     //monday chart data
-    var nethkinData = {
-        labels: backendData.map(time => time.time),
-        datasets: [{
-            data: backendData.map(total => 30 - (total.total)),
-            label: "Empty parking spaces",
-            fill: true,
-            backgroundColor: "rgba(211,211,211,0.5)",
-            borderColor: "rgb(211,211,211)"
-        }]
-    }
+    var nethkinData = useMemo(() => {
+        return {
+            labels: backendData.map(time => time.time),
+            datasets: [{
+                data: backendData.map(total => 30 - (total.total)),
+                label: "Empty parking spaces",
+                fill: true,
+                backgroundColor: "rgba(211,211,211,0.5)",
+                borderColor: "rgb(211,211,211)"
+            }]
+        }
+    }, [backendData]);
     // nethkin chart options
     var nethkinOptions = {
             scales: {
@@ -80,7 +82,7 @@ function Bar() {
             options: nethkinOptions,
             
         });
-    }, [])
+    }, [nethkinData])
 
     return (
         <>
