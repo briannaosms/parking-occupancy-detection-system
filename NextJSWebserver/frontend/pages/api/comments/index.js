@@ -1,5 +1,5 @@
-import { comments } from "@/old/data/comments";
+// import { comments } from "@/old/data/comments";
 
-export default function handler(req, res) {
-    res.status(200).json(comments)
-}
+// export default function handler(req, res) {
+//     res.status(200).json(comments)
+// }

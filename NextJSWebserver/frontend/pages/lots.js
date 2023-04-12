@@ -32,9 +32,9 @@ function Lots() {
 			
             {/* page content */}
 			<div className={lots.content}>
-				<a href="/nethken" className={lots.go}>Nethken Lot &#8250;</a>
-				<a href="/louisiana" className={lots.go}>Louisiana Lot &#8250;</a>
-				<a href="/dan-reneau-legacy" className={lots.go}>Dan Reneau Legacy Lot &#8250;</a>
+				<Link href="/nethken" className={lots.go}>Nethken Lot &#8250;</Link>
+				<Link href="/louisiana" className={lots.go}>Louisiana Lot &#8250;</Link>
+				<Link href="/dan-reneau-legacy" className={lots.go}>Dan Reneau Legacy Lot &#8250;</Link>
 			</div>
 		</>
 	);
