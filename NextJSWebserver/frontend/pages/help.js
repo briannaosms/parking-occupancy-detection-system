@@ -43,7 +43,7 @@ function Help() {
 					id="response" 
 					rows="10" 
 					cols="40" 
-					placeholder={lorem1}
+					placeholder="Available parking indicates how many spots are available in the selected parking lot. Parking spaces are seperated by type: Student, Faculty, Handicap, and Visitor. Each type of space is given a ratio of available spots to total spots. E.g. : Student [1/16] indicates there is one parking space open out of a total of 16 spaces."
 				></textarea>
 
 				<h3>Parking Statistics</h3>
@@ -52,7 +52,16 @@ function Help() {
 					id="response" 
 					rows="10" 
 					cols="40" 
-					placeholder={lorem2}
+					placeholder="Parking statistic gives an approximate number of open spaced each weekday between the hours of 7:00 a.m. and 5:00 p.m. based on previous data trends."
+				></textarea>
+
+				<h3>About PODS</h3>
+				<textarea
+					readOnly = {true} 
+					id="response" 
+					rows="10" 
+					cols="40" 
+					placeholder="Parking Lot Occupancy Detection System, or PODS, is a student project that aims to reduce the heacache and frustration in finding availble parking, especially during peak rush hours between classes. PODS utilizes cameras, machine learning, and object detection to determine spot vacancy. This data is then sent to a database and displayed on this website hosted on Vercel.com."
 				></textarea>
 			</div>
 		</>

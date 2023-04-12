@@ -23,7 +23,7 @@ function Home() {
 
 			{/* parking statistics link */}
 			<div className={styles.card}>
-				<a
+				<Link
 					href="/main"
 					className={styles.card}
 					target="_blank"
@@ -34,7 +34,7 @@ function Home() {
 							Login to CAS
 						</h2>
 					</div>
-				</a>
+				</Link>
 				</div>
         </>
     );
