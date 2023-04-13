@@ -2,16 +2,24 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from time import sleep
-# pip install python-dotenv
 from dotenv import load_dotenv
 import os
+import sys
 
 def main():
-    # the image saved directory 
+    # the iteration time in minutes
+    if(len(sys.argv) < 1):
+        print("Correct usage: python main.py <iteration-time-in-secs>")
+        print(len(sys.argv[1]))
+        exit()
+    else:
+        iteration_time = int(sys.argv[1])
+
+    # the image save directory and file name 
     save_dir = "../object-detection/images/"
     image_filename = "image.png"
 
-    # import credentials
+    # import credentials for camera system
     env_dir = "../"
     env_filename = "pods.env"
     env_path = os.path.join(env_dir, env_filename)
@@ -22,32 +30,31 @@ def main():
         password = os.getenv("CAMERA_PASSWORD")
         url = os.getenv("CAMERA_IP")
     except Exception as e: 
-        print(e)
-        print("error getting credentials")
+        print("ERROR: Failed to retrieve credentials\n" + e)
         exit()
 
-
-    # modify options to keep the browser open after execution
+    # modify options to keep the browser open & maximized
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
+    chrome_options.add_argument("start-maximized")
     # set the browser to the chrome webdriver
     browser = webdriver.Chrome(options=chrome_options)
 
-    # the iteration time in minutes
-    iteration_time = 1
-
+    # login to the camera system
+    login(browser, url, username, password)
     # main iteration loop
+    iter_count = 0
     while(True):
-        # login to the camera system
-        login(browser, url, username, password)
-
         # save the image to the save directory
+        print(f"Iteration {iter_count}")
         save_image(browser, image_filename, save_dir)
 
         # save image
+        print("\tWaiting...")
+        iter_count += 1
         sleep(iteration_time)
 
-# login to the camera system
+# login to the camera system-- sleeps are necessary for buffer/delay
 def login(browser, url, username, password):
     # get camera ip
     browser.get(url)
@@ -60,14 +67,15 @@ def login(browser, url, username, password):
     sleep(0.00001)
     # find the submit element and login
     browser.find_element(By.ID, "b_login").click()
+    sleep(5)
 
 # create a new file and write the image to disk using image element
 def save_image(browser, filename, save_dir):
     with open(save_dir + filename, mode = "wb") as f:
         image = browser.find_element(By.ID, "h5player")
         f.write(image.screenshot_as_png)
-    print(f"Saved [{filename}] to [{save_dir}]")
+    print(f"\tSaved [{filename}] to [{save_dir}]")
 
 
 if(__name__ == "__main__"):
-    pass
+    main()
