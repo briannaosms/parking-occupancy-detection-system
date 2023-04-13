@@ -10,3 +10,4 @@ opencv-python-headless
 h5py
 imgaug
 IPython[all]
+mysql-connector-python
