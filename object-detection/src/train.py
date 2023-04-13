@@ -7,6 +7,8 @@ from mrcnn.model import MaskRCNN
 from matplotlib import pyplot
 
 import tensorflow as tf
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 class ParkingLotDataset(Dataset):
     # load the dataset definitions
@@ -49,20 +51,21 @@ class ParkingLotDataset(Dataset):
         # extract information (id and bounding box (center, size, and angle))
         spaces = []
         for space in rt.iter("space"):
-            id = int(space.attrib["occupied"])
-            for bbox in space.findall("rotatedRect/center"):
-                x = int(bbox.get("x"))
-                y = int(bbox.get("y"))
+            if("occupied" in space.attrib):
+                id = int(space.attrib["occupied"])
+                for bbox in space.findall("rotatedRect/center"):
+                    x = int(bbox.get("x"))
+                    y = int(bbox.get("y"))
 
-            for bbox in space.findall("rotatedRect/size"):
-                w = int(bbox.get("w"))
-                h = int(bbox.get("h"))
-            
-            for bbox in space.findall("rotatedRect/angle"):
-                d = int(bbox.get("d"))
+                for bbox in space.findall("rotatedRect/size"):
+                    w = int(bbox.get("w"))
+                    h = int(bbox.get("h"))
+                
+                for bbox in space.findall("rotatedRect/angle"):
+                    d = int(bbox.get("d"))
 
-            data = [id, x, y, w, h, d]
-            spaces.append(data)
+                data = [id, x, y, w, h, d]
+                spaces.append(data)
 
         return spaces
 
@@ -73,6 +76,7 @@ class ParkingLotDataset(Dataset):
         info = self.image_info[image_id]
         # define bbox file location
         path = info["annotation_path"]
+        # print(path)
         # load and extract bboxes from xml file
         bboxes = self.extract_bboxes(path)
         # create an array for all masks with each on a different channel
@@ -112,8 +116,8 @@ class ParkingLotConfig(Config):
 # main function of program
 def main():
     # define storage locations
-    tr_dataset_dir = "../datasets/parking-lot/PUCPR/Rainy/2012-09-16/"
-    te_dataset_dir = "../datasets/parking-lot/PUCPR/Rainy/2012-09-21/"
+    tr_dataset_dir = "../datasets/parking-lot/PUCPR/Cloudy/2012-11-11/"
+    te_dataset_dir = "../datasets/parking-lot/PUCPR/Cloudy/2012-10-05/"
     coco_weights_filename = "/app/mask_rcnn_coco.h5"
     # coco_weights_path = os.path.abspath(coco_weights_filename)
     # print(coco_weights_path)
