@@ -1,12 +1,31 @@
+from dotenv import load_dotenv
+import os
 import mysql.connector
 
-
-#only works on same wifi network
+# only works on same wifi network
 # docker exec -it mysql /bin/sh -c "mysql -u root -ppassword"
+# grab credentials
+env_dir = "../../"
+env_filename = "pods.env"
+env_path = os.path.join(env_dir, env_filename)
+try:
+    os.path.exists(env_path)
+    load_dotenv(env_path)
+    username = os.getenv("SQL_USERNAME")
+    password = os.getenv("SQL_ROOT_PASSWORD")
+    database = os.getenv("SQL_DATABASE")
+    host = os.getenv("HOST")
+except Exception as e:
+    print("ERROR: Failed to retrieve credentials\n" + e)
+    exit()
+
 # establishing the connection
 print("starting conn...")
 conn = mysql.connector.connect(
-   user='root', password='password', host='mysql', database='ParkingLot')
+   user=username, 
+   password=password, 
+   host=host, 
+   database=database)
 print("conn succesful")
 
 # Creating a cursor object using the cursor() method
@@ -28,7 +47,5 @@ except:
     conn.rollback()
 
 print("data inserted")
-
-
 
 conn.close()
