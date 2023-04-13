@@ -1,2 +1,5 @@
 # ignore the object detection training/testing datasets
 /object-detection/datasets/
+
+# ignore enviroment variables
+*.env
