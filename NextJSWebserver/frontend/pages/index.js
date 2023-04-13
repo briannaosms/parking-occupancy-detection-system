@@ -43,7 +43,7 @@ function Home() {
 			{/* parking statistics link */}
 			<div className={styles.card}>
 				<a
-					href="/stats"
+					href="/lots2"
 					className={styles.card}
 					target="_blank"
 					rel="noopener noreferrer"

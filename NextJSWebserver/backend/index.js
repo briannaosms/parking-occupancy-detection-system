@@ -16,7 +16,17 @@ const db = mysql.createPool({
 
 app.get('/get', (req, res) => {
     // THIS GETS THE INFORMATION IF YOU WANT DIFFERENT INFO CHANGE THE SQL QUERY
-    const SQL = "SELECT * FROM parkingLots;"
+    const SQL = "SELECT SUM(CurrentSpacesFaculty+CurrentSpacesStudent+CurrentSpacesHandicapped+CurrentSpacesVisitor) AS total FROM ParkingLot2 GROUP BY Datetime;"
+    const SQL2 = "SELECT cast(Datetime as time) AS time from ParkingLot2;"
+    const SQL3 = "SELECT cast(Datetime as time) AS time, SUM(CurrentSpacesFaculty+CurrentSpacesStudent+CurrentSpacesHandicapped+CurrentSpacesVisitor) AS total FROM ParkingLot2 GROUP BY Datetime;"
+    db.query(SQL3,(err, result) =>{
+        res.send(result);
+    })
+})
+
+app.get('/current', (req, res) => {
+    // THIS GETS THE INFORMATION IF YOU WANT DIFFERENT INFO CHANGE THE SQL QUERY
+    const SQL = "SELECT CurrentSpacesFaculty, CurrentSpacesStudent, CurrentSpacesHandicapped, CurrentSpacesVisitor FROM ParkingLot2;"
     db.query(SQL,(err, result) =>{
         res.send(result);
     })

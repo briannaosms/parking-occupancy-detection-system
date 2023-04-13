@@ -1,123 +1,88 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Chart } from 'chart.js/auto';
+import Axios from 'axios';
 import Head from "next/head"
 
 import lots from '../styles/lots.module.css'
 import stats from '../styles/stats.module.css'
 
-// monday chart data
-var mondayData = {
-    labels: ["7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"],
-    datasets: [{
-        data: [2, 1, 1, 6, 4, 7, 8, 14, 13],
-        label: "Empty parking spaces",
-        backgroundColor: "rgb(39, 63, 150, 0.5)",
-    }]
-}
-// monday chart options
-var mondayOptions = {
-
-}
-
-
-// tuesday chart data
-var tuesdayData = {
-    labels: ["7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"],
-    datasets: [{
-        data: [2, 1, 1, 6, 4, 7, 8, 14, 13],
-        label: "Empty parking spaces",
-        backgroundColor: "rgb(39, 63, 150, 0.5)",
-    }]
-}
-// tuesday chart options
-var tuesdayOptions = [
-
-]
-
-
-// wednesday chart data
-var wednesdayData = {
-    labels: ["7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"],
-    datasets: [{
-        data: [2, 1, 1, 6, 4, 7, 8, 14, 13],
-        label: "Empty parking spaces",
-        backgroundColor: "rgb(39, 63, 150, 0.5)",
-    }]
-}
-// wednesday chart options
-var wednesdayOptions = {
-
-}
-
-
-// thursday chart data
-var thursdayData = {
-    labels: ["7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"],
-    datasets: [{
-        data: [2, 1, 1, 6, 4, 7, 8, 14, 13],
-        label: "Empty parking spaces",
-        backgroundColor: "rgb(39, 63, 150, 0.5)",
-    }]
-}
-// thursday chart options
-var thursdayOptions =  {
-
-}
-
-
-// friday chart data
-var fridayData = {
-    labels: ["7 AM", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"],
-    datasets: [{
-        data: [2, 1, 1, 6, 4, 7, 8, 14, 13],
-        label: "Empty parking spaces",
-        backgroundColor: "rgb(39, 63, 150, 0.5)",
-    }]
-}
-// friday chart options
-var fridayOptions = {
-
-}
-
-
+import Sidebar from './sidebar';
 
 function Bar() {
+
+    const [backendData, setBackendData] = useState([{}])
+
+    useEffect(() => {
+            Axios.get('http://localhost:3001/get').then((response) =>{
+              console.log(response.data)
+              setBackendData(response.data)
+            })
+          }, [])
+    //const total = backendData[1].total;
+    //console.log(total)
+    // const NethEmpty = 30-total
+
+
+    //monday chart data
+    var nethkinData = useMemo(() => {
+        return {
+            labels: backendData.map(time => time.time),
+            datasets: [{
+                data: backendData.map(total => 30 - (total.total)),
+                label: "Empty parking spaces",
+                fill: true,
+                backgroundColor: "rgba(211,211,211,0.5)",
+                borderColor: "rgb(211,211,211)"
+            }]
+        }
+    }, [backendData]);
+    // nethkin chart options
+    var nethkinOptions = {
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 30,
+                    ticks: {
+                        color: 'Grey',
+                    },
+                    grid: {
+                        display: true,
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'Grey',
+                    }
+                },
+            },
+            animation: {
+                y: {
+                  duration: 3000,
+                  from: 3000
+                }
+            },
+            
+    }
+
+
+
     useEffect(() => {
         // var test = document.getElementById("0").getContext('2d');
         // test.destroy();
         // monday chart
-        var mondayCtx = document.getElementById('mondayChart').getContext('2d');
-        var mondayChart = new Chart(mondayCtx, {
+        
+        var ctx = document.getElementById('nethkinChart').getContext('2d');
+        let nethkinChartStatus = Chart.getChart("nethkinChart");
+        if (nethkinChartStatus != undefined) {
+            nethkinChartStatus.destroy();
+        }
+        var nethkinChart = new Chart(ctx, {
             type: 'line',
-            data: mondayData
+            data: nethkinData,
+            options: nethkinOptions,
+            
         });
-
-        // tuesday chart
-        var tuesdayCtx = document.getElementById('tuesdayChart').getContext('2d');
-        var tuesdayChart = new Chart(tuesdayCtx, {
-            type: 'line',
-            data: tuesdayData
-        });
-
-
-        var wednesdayCtx = document.getElementById('wednesdayChart').getContext('2d');
-        var wednesdayChart = new Chart(wednesdayCtx, {
-            type: 'line',
-            data: wednesdayData
-        });
-
-        var thursdayCtx = document.getElementById('thursdayChart').getContext('2d');
-        var thursdayChart = new Chart(thursdayCtx, {
-            type: 'line',
-            data: thursdayData
-        });
-
-        var fridayCtx = document.getElementById('fridayChart').getContext('2d');
-        var fridayChart = new Chart(fridayCtx, {
-            type: 'line',
-            data: fridayData
-        });
-    }, [])
+    }, [nethkinData])
 
     return (
         <>
@@ -127,14 +92,7 @@ function Bar() {
                 <title>Parking Statistics</title>
             </Head>
             
-
-            {/* sidebar */}
-            <div className={lots.sidebar}>
-                <a className='active' href='/'>Home</a>
-                <a href='/lots'>Available Parking</a>
-                <a href='/stats'>Parking Statistics</a>
-                <a href='/help'>Help</a>
-            </div>
+            <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>
 
 
             {/* navbar title */}
@@ -147,32 +105,8 @@ function Bar() {
             {/* bar charts */}
             {/* monday */}
             <div className={stats.chart}>
-                <h2>Monday</h2>
-                <canvas id='mondayChart'></canvas>
-            </div>
-
-            {/* tuesday */}
-            <div className={stats.chart}>
-                <h2>Tuesday</h2>
-                <canvas id='tuesdayChart'></canvas>
-            </div>
-
-            {/* wednesday */}
-            <div className={stats.chart}>
-                <h2>Wednesday</h2>
-                <canvas id='wednesdayChart'></canvas>
-            </div>
-
-            {/* thursday */}
-            <div className={stats.chart}>
-                <h2>Thursday</h2>
-                <canvas id='thursdayChart'></canvas>
-            </div>
-
-            {/* friday */}
-            <div className={stats.chart}>
-                <h2>Friday</h2>
-                <canvas id='fridayChart'></canvas>
+                <h2>Nethkin Stats</h2>
+                <canvas id='nethkinChart'></canvas>
             </div>
         </>
     )

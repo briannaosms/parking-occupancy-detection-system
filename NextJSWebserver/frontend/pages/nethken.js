@@ -2,8 +2,27 @@ import Image from'next/image'
 import Head from 'next/head'
 
 import lots from '../styles/lots.module.css'
+import Sidebar from './sidebar';
+
+import { useEffect, useState } from 'react';
+import Axios from 'axios';
 
 function Details() {
+    const [backendData, setBackendData] = useState([{}])
+
+    useEffect(() => {
+        Axios.get('http://localhost:3001/current').then((response) =>{
+        console.log(response)
+        setBackendData(response.data)
+        })
+    }, [])
+
+    const currentFacultyNum = backendData[0].CurrentSpacesFaculty + "/ 20"
+    const currentStudentNum = backendData[0].CurrentSpacesStudent + "/ 30"
+    const currentHandicappedNum = backendData[0].CurrentSpacesHandicapped + "/ 2"
+    const currentVisitorNum = backendData[0].CurrentSpacesVisitor + "/ 0"
+
+
     return (
         <>
 			{/* browser tab title and icon */}
@@ -13,13 +32,7 @@ function Details() {
             </Head>
 
 
-            {/* sidebar */}
-            <div className={lots.sidebar}>
-                <a className='active' href='/'>Home</a>
-                <a href='/lots'>Available Parking</a>
-                <a href='/stats'>Parking Statistics</a>
-                <a href='/help'>Help</a>
-            </div>
+            <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>
         
 
             {/* navbar title */}
@@ -61,7 +74,7 @@ function Details() {
                     {/* available student spaces */}
                     <form>
                         <input type="text"
-                            value="1/16"
+                            value={currentStudentNum}
                             className={lots.spaceBox}
                             readOnly/>
                         <label className={lots.spaceLabel}>
@@ -72,7 +85,7 @@ function Details() {
                     {/* available faculty spaces */}
                     <form>
                         <input type="text"
-                            value="2/8"
+                            value={currentFacultyNum}
                             className={lots.spaceBox}
                             readOnly/>
                         <label className={lots.spaceLabel}>
@@ -83,7 +96,7 @@ function Details() {
                     {/* available handicapped spaces */}
                     <form>
                         <input type="text"
-                            value="0/2"
+                            value={currentHandicappedNum}
                             className={lots.spaceBox}
                             readOnly/>
                         <label className={lots.spaceLabel}>
@@ -94,7 +107,7 @@ function Details() {
                     {/* available students spaces */}
                     <form>
                         <input type="text"
-                                value="1/1"
+                                value={currentVisitorNum}
                                 className={lots.spaceBox}
                                 readOnly/>
                         <label className={lots.spaceLabel}>
