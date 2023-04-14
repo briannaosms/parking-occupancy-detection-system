@@ -12,7 +12,7 @@ export default props => {
         <a className="menu-item" href="/lots">
           Available Parking
         </a>
-        <a className="menu-item" href="/stats">
+        <a className="menu-item" href="/lots2">
           Parking Statistics
         </a>
         <a className="menu-item" href="/help">
