@@ -6,7 +6,7 @@ export default props => {
   return (
     //<div className={sidebar.bm_menu}>
       <Menu styles={styles}>
-        <a className="menu-item" href="/">
+        <a className="menu-item" href="/main">
           Home
         </a>
         <a className="menu-item" href="/lots">
@@ -28,7 +28,7 @@ var styles = {
     position: 'fixed',
     width: '36px',
     height: '30px',
-    left: '30px',
+    left: '15px',
     top: '10px'
   },
   bmBurgerBars: {
@@ -58,7 +58,7 @@ var styles = {
   },
   bmItemList: {
     color: 'black',
-    padding: '0px'
+    padding: '10px',
   },
   bm_Item: {
     display: 'inline-block',

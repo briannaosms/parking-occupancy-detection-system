@@ -1,7 +1,7 @@
 /* navbar background and positioning*/
 .navbar {
     overflow: auto;
-    margin-left: 100px;
+    margin-left: 70px;
     background-color: #676767;
     position: fixed;
     width: 100%;
