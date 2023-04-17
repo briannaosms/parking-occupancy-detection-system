@@ -24,7 +24,7 @@ function Bar() {
 
 
     //monday chart data
-    var nethkinData = useMemo(() => {
+    var nethkenData = useMemo(() => {
         return {
             labels: backendData.map(time => time.time),
             datasets: [{
@@ -37,7 +37,7 @@ function Bar() {
         }
     }, [backendData]);
     // nethkin chart options
-    var nethkinOptions = {
+    var nethkenOptions = {
             scales: {
                 y: {
                     suggestedMin: 0,
@@ -72,17 +72,17 @@ function Bar() {
         // monday chart
         
         var ctx = document.getElementById('nethkinChart').getContext('2d');
-        let nethkinChartStatus = Chart.getChart("nethkinChart");
-        if (nethkinChartStatus != undefined) {
-            nethkinChartStatus.destroy();
+        let nethkenChartStatus = Chart.getChart("nethkinChart");
+        if (nethkenChartStatus != undefined) {
+            nethkenChartStatus.destroy();
         }
-        var nethkinChart = new Chart(ctx, {
+        var nethkenChart = new Chart(ctx, {
             type: 'line',
-            data: nethkinData,
-            options: nethkinOptions,
+            data: nethkenData,
+            options: nethkenOptions,
             
         });
-    }, [nethkinData])
+    }, [nethkenData])
 
     return (
         <>
@@ -105,8 +105,8 @@ function Bar() {
             {/* bar charts */}
             {/* monday */}
             <div className={stats.chart}>
-                <h2>Nethkin Stats</h2>
-                <canvas id='nethkinChart'></canvas>
+                <h2>Nethken Stats</h2>
+                <canvas id='nethkenChart'></canvas>
             </div>
         </>
     )

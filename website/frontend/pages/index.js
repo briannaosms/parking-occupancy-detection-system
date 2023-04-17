@@ -26,7 +26,6 @@ function Home() {
 				<a
 					href="/lots"
 					className={styles.card}
-					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<div className={styles.border}>
@@ -45,7 +44,6 @@ function Home() {
 				<a
 					href="/lots2"
 					className={styles.card}
-					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<div className={styles.border}>
@@ -64,7 +62,6 @@ function Home() {
 				<a
 					href="/help"
 					className={styles.card}
-					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<div className={styles.border}>
