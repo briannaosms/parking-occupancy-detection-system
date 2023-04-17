@@ -71,8 +71,8 @@ function Bar() {
         // test.destroy();
         // monday chart
         
-        var ctx = document.getElementById('nethkinChart').getContext('2d');
-        let nethkenChartStatus = Chart.getChart("nethkinChart");
+        var ctx = document.getElementById('nethkenChart').getContext('2d');
+        let nethkenChartStatus = Chart.getChart("nethkenChart");
         if (nethkenChartStatus != undefined) {
             nethkenChartStatus.destroy();
         }
