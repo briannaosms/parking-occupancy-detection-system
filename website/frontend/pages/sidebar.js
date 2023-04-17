@@ -1,25 +1,26 @@
+import Link from 'next/link';
 import React from 'react';
 import { push as Menu } from 'react-burger-menu';
 
 
-export default props => {
+export default function sidebar() {
   return (
-    //<div className={sidebar.bm_menu}>
+    <div className={sidebar.bm_menu}>
       <Menu styles={styles}>
-        <a className="menu-item" href="/main">
+        <Link className="menu-item" href="/main">
           Home
-        </a>
-        <a className="menu-item" href="/lots">
+        </Link>
+        <Link className="menu-item" href="/lots">
           Available Parking
-        </a>
-        <a className="menu-item" href="/lots2">
+        </Link>
+        <Link className="menu-item" href="/lots2">
           Parking Statistics
-        </a>
-        <a className="menu-item" href="/help">
+        </Link>
+        <Link className="menu-item" href="/help">
           Help
-        </a>
+        </Link>
       </Menu>
-    //</div>
+    </div>
   );
 };
 

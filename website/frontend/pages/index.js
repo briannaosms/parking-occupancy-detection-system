@@ -23,7 +23,7 @@ function Home() {
 
 			{/* available parking link */}
 			<div className={styles.card}>
-				<a
+				<Link
 					href="/lots"
 					className={styles.card}
 					rel="noopener noreferrer"
@@ -36,12 +36,12 @@ function Home() {
 							Find available parking lots.
 						</p>
 					</div>
-				</a>
+				</Link>
 			</div>
 
 			{/* parking statistics link */}
 			<div className={styles.card}>
-				<a
+				<Link
 					href="/lots2"
 					className={styles.card}
 					rel="noopener noreferrer"
@@ -54,12 +54,12 @@ function Home() {
 							Find past parking lot activity.
 						</p>
 					</div>
-				</a>
+				</Link>
 				</div>
 
 			{/* help link */}
 			<div className={styles.card}>
-				<a
+				<Link
 					href="/help"
 					className={styles.card}
 					rel="noopener noreferrer"
@@ -72,7 +72,7 @@ function Home() {
 							Read more about the project.
 						</p>
 					</div>
-				</a>
+				</Link>
 				<br/>
 
 				{/* footer with project creators */}
