@@ -27,10 +27,10 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: "${SQL_DATABASE}"
+      MYSQL_PASSWORD: "${SQL_USER_PASSWORD}"
+      MYSQL_USER: "${SQL_USERNAME}"
+      MYSQL_ROOT_PASSWORD: "${SQL_ROOT_PASSWORD}"
     ports:
       - '3306:3306'
     expose:

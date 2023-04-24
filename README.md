@@ -75,6 +75,6 @@ Automation is powered by the following steps:
   - Wood -> 1"x4" piece of wood fastened to the pvc pipe via two standard U-bolts.
   - Camera -> An outdoor PoE camera screwed into the wood on the mount and tightened for the best viewing angle.
   
-<img src="Images/installed_camera.jpg" width=200> <img src="Images/camera_pov.jpg" width=200>
-<img src="Images/pole_structure.jpg" width=200> <img src="Images/mount_base.jpg" width=200>
+<img src="hardware/installed_camera.jpg" width=200> <img src="hardware/camera_pov.jpg" width=200>
+<img src="hardware/pole_structure.jpg" width=200> <img src="hardware/mount_base.jpg" width=200>
 

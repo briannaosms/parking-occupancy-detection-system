@@ -1,9 +1,5 @@
 # ignore the object detection training/testing datasets
 /object-detection/datasets/
-# ignore database
-/database/data/
-# ignore creds
-*.env
 
 # ignore database
 /database/data/
