@@ -3,23 +3,25 @@ services:
   object-detection:
     container_name: object-detection
     build: ./object-detection
-    environment:
-      - PYTHONPATH=:/app
-    user: 1000:1000
+    # environment:
+    #   - PYTHONPATH=:/app
+    # user: 1000:1000
     volumes:
       - ./object-detection/datasets:/app/datasets:ro
       - ./object-detection/images:/app/images:ro
       - ./object-detection/src:/app/src:rw
       - ./object-detection/output:/app/output:rw
+      - ./object-detection/yolov7:/app/yolov7:rw
     stdin_open: true
     tty: true 
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+    shm_size: 4gb
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
   db:
     container_name: mysql
     image: mysql:5.7
