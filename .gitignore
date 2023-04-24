@@ -2,7 +2,7 @@
 /object-detection/datasets/
 
 # ignore database
-/database/data/
+/database/
 
 # ignore creds
 *.env
