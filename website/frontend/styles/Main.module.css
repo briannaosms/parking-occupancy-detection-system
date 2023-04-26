@@ -54,3 +54,14 @@
     border: 1px solid rgba(var(--card-border-rgb), 0);
     transition: background 200ms, border 200ms;
   }
+
+@media only screen and (max-device-width: 480px) {
+  .border {
+    text-align: center;
+    border: solid;
+    border-width: 3px;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+  }
+}

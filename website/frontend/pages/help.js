@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Head from "next/head"
 
-import lots from '../styles/lots.module.css'
 import help from '../styles/help.module.css'
 
 import Sidebar from './sidebar';
@@ -30,7 +29,7 @@ function Help() {
 
 
 			{/* nvabar title */}
-			<div className={lots.navbar}>
+			<div className={help.navbar}>
 				<h2>Help</h2>
 			</div>
 

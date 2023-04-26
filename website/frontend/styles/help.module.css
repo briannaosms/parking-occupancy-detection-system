@@ -5,3 +5,27 @@
 
     /* padding-top: 50px; */
 }
+
+/* navbar background and positioning*/
+.navbar {
+    overflow: auto;
+    margin-left: 70px;
+    background-color: #676767;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    float: auto;
+}
+
+/* navbar title */
+.navbar h2 {
+    margin-top: 12px;
+    /* float: left; */
+    position: fixed;
+    display: block;
+    color: #e4e4e4;
+    text-align: left;
+    padding-left: 16px;
+    padding-top: 0px;
+    text-decoration: none;
+}

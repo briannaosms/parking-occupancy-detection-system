@@ -7,7 +7,7 @@ export default function sidebar() {
   return (
     <div className={sidebar.bm_menu}>
       <Menu styles={styles}>
-        <Link className="menu-item" href="/main">
+        <Link className="menu-item" href="/">
           Home
         </Link>
         <Link className="menu-item" href="/lots">
