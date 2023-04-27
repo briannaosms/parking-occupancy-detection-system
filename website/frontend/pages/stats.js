@@ -9,8 +9,8 @@ import stats from '../styles/stats.module.css'
 import Sidebar from './sidebar';
 
 function Bar() {
-
-    const [backendData, setBackendData] = useState([{}])
+    // backendData is the variable that will receive data from api
+    const [backendData, setBackendData] = useState([])
 
     useEffect(() => {
             /*Axios.get('http://localhost:3001/get').then((response) =>{
@@ -18,13 +18,19 @@ function Bar() {
               setBackendData(response.data)
             })*/
         async function getParkingLotData() {
+            // Where the api data is located
             const apiUrlEndpoint = 'https://latechpods.vercel.app/api/nethken_lot';
+            // Where the response from the endpoint will be fetched
             const response = await fetch(apiUrlEndpoint);
+            // Where the api data from the response will be stored as a JSON Object
             const res = await response.json();
-            console.log(res.results);
+            //console.log(res);
+            //console.log(res.results);
+            // Where the api data is stored in the backendData variable
+            // From Object to array by setting to .results
             setBackendData(res.results);
-            console.log(backendData);
         }
+        // Function call
         getParkingLotData();
     }, [])
     //const total = backendData[1].total;
@@ -35,9 +41,9 @@ function Bar() {
     //monday chart data
     var nethkenData = useMemo(() => {
         return {
-            labels: backendData.map(time => time.time),
+            labels: backendData.map(time => time.Datetime),
             datasets: [{
-                data: backendData.map(total => 30 - (total.total)),
+                data: backendData.map(total => (30 - (total.CurrentSpacesStudent))),
                 label: "Empty parking spaces",
                 fill: true,
                 backgroundColor: "rgba(211,211,211,0.5)",
@@ -45,7 +51,7 @@ function Bar() {
             }]
         }
     }, [backendData]);
-    // nethkin chart options
+    // nethken chart options
     var nethkenOptions = {
             scales: {
                 y: {
