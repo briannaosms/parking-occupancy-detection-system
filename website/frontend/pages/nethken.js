@@ -8,24 +8,33 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 function Details() {
-    
+    // backendData is the variable that will receive data from api
     const [backendData, setBackendData] = useState([{}])
 
     useEffect(() => {
         async function getParkingLotData() {
+            // Where the api data is located
             const apiUrlEndpoint = 'https://latechpods.vercel.app/api/nethken_lot';
+            // Where the response from the endpoint will be fetched
             const response = await fetch(apiUrlEndpoint);
+            // Where the api data from the response will be stored as a JSON Object
             const res = await response.json();
-            console.log(res);
+            //console.log(res);
+            // Where the api data is stored in the backendData variable
+            // From Object to array by setting to .results
             setBackendData(res.results);
         }
+        // Function call
         getParkingLotData();
     }, [])
 
-    const currentFacultyNum = backendData[0].CurrentSpacesFaculty + "/ 20"
-    const currentStudentNum = backendData[0].CurrentSpacesStudent + "/ 30"
-    const currentHandicappedNum = backendData[0].CurrentSpacesHandicapped + "/ 2"
-    const currentVisitorNum = backendData[0].CurrentSpacesVisitor + "/ 0"
+    // Values for input boxes
+    const currentFacultyNum = backendData[0].CurrentSpacesFaculty + " / 20"
+    const currentStudentNum = backendData[0].CurrentSpacesStudent + " / 30"
+    const currentHandicappedNum = backendData[0].CurrentSpacesHandicapped + " / 2"
+    const currentVisitorNum = backendData[0].CurrentSpacesVisitor + " / 0"
+    const currentDatetime = backendData[0].Datetime
+
 
 
     return (
@@ -64,10 +73,11 @@ function Details() {
                 <h2>Available Parking</h2>
                 <form>
                     <label className={lots.timeLabel}>
-                        Last updated at
+                        Last updated on
                     </label>
                     <input type="text"
-                           value="8:30 AM"
+                           // Datetime format needs to be restructured
+                           value={currentDatetime}
                            className={lots.timeBox}
                            readOnly 
                     />
