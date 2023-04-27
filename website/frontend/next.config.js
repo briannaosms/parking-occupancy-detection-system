@@ -1,12 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+module.exports = {
+  env: {
+    'host': 'containers-us-west-65.railway.app',
+    'port': '7361',
+    'database': 'railway',
+    'user': 'root',
+    'password': 'scBwbA5XwEW7VOLpTfaB'
+  }
 }
-rewrites: async () => [
-  {
-    source: "/public/_lot_stats.html",
-    destination: "/pages/api/lot_stats.js",
-  },
-],
-
-module.exports = nextConfig

@@ -13,11 +13,20 @@ function Bar() {
     const [backendData, setBackendData] = useState([{}])
 
     useEffect(() => {
-            Axios.get('http://localhost:3001/get').then((response) =>{
+            /*Axios.get('http://localhost:3001/get').then((response) =>{
               console.log(response.data)
               setBackendData(response.data)
-            })
-          }, [])
+            })*/
+        async function getParkingLotData() {
+            const apiUrlEndpoint = 'http://localhost:3000/api/nethken_lot';
+            const response = await fetch(apiUrlEndpoint);
+            const res = await response.json();
+            console.log(res.results);
+            setBackendData(res.results);
+            console.log(backendData);
+        }
+        getParkingLotData();
+    }, [])
     //const total = backendData[1].total;
     //console.log(total)
     // const NethEmpty = 30-total
@@ -111,7 +120,5 @@ function Bar() {
         </>
     )
 }
-
-
 
 export default Bar;

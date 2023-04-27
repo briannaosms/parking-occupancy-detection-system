@@ -8,13 +8,18 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 function Details() {
+    
     const [backendData, setBackendData] = useState([{}])
 
     useEffect(() => {
-        Axios.get('http://localhost:3001/current').then((response) =>{
-        console.log(response)
-        setBackendData(response.data)
-        })
+        async function getParkingLotData() {
+            const apiUrlEndpoint = 'http://localhost:3000/api/nethken_lot';
+            const response = await fetch(apiUrlEndpoint);
+            const res = await response.json();
+            console.log(res);
+            setBackendData(res.results);
+        }
+        getParkingLotData();
     }, [])
 
     const currentFacultyNum = backendData[0].CurrentSpacesFaculty + "/ 20"
