@@ -7,6 +7,8 @@ const mysql2 = require('mysql2/promise');
 }*/
 
 export default async function handler(req,res) {
+  // Connection to database
+  // Credentials are exposed right now and need to be hidden in next.config.js
   const db = await mysql2.createConnection({
     host: 'containers-us-west-65.railway.app',
     port: '7361',
@@ -14,7 +16,7 @@ export default async function handler(req,res) {
     user: 'root',
     password: 'scBwbA5XwEW7VOLpTfaB'
   });
-  
+  // Try block to query data from the database
   try {
     const query = "SELECT * FROM ParkingLot";
     const values = [];
