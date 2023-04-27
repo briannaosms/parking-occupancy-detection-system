@@ -13,7 +13,7 @@ function Details() {
 
     useEffect(() => {
         async function getParkingLotData() {
-            const apiUrlEndpoint = 'https://latechpods.vercel.app/nethken';
+            const apiUrlEndpoint = 'https://latechpods.vercel.app/api/nethken_lot';
             const response = await fetch(apiUrlEndpoint);
             const res = await response.json();
             console.log(res);

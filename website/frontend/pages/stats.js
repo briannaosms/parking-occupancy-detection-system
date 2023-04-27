@@ -18,7 +18,7 @@ function Bar() {
               setBackendData(response.data)
             })*/
         async function getParkingLotData() {
-            const apiUrlEndpoint = 'https://latechpods.vercel.app/stats';
+            const apiUrlEndpoint = 'https://latechpods.vercel.app/api/nethken_lot';
             const response = await fetch(apiUrlEndpoint);
             const res = await response.json();
             console.log(res.results);
