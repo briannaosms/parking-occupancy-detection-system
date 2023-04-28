@@ -29,10 +29,10 @@ function Details() {
     }, [])
 
     // Values for input boxes
-    const currentFacultyNum = backendData[backendData.length - 1].CurrentSpacesFaculty + " / 20"
-    const currentStudentNum = backendData[backendData.length - 1].CurrentSpacesStudent + " / 30"
-    const currentHandicappedNum = backendData[backendData.length - 1].CurrentSpacesHandicapped + " / 2"
-    const currentVisitorNum = backendData[backendData.length - 1].CurrentSpacesVisitor + " / 0"
+    const currentFacultyNum = backendData[backendData.length - 1].CurrentSpacesFaculty + " / " + backendData[backendData.length - 1].MaxSpacesFaculty
+    const currentStudentNum = backendData[backendData.length - 1].CurrentSpacesStudent + " / " + backendData[backendData.length - 1].MaxSpacesStudent
+    const currentHandicappedNum = backendData[backendData.length - 1].CurrentSpacesHandicapped + " / " + backendData[backendData.length - 1].MaxSpacesHandicapped
+    const currentVisitorNum = backendData[backendData.length - 1].CurrentSpacesVisitor + " / " + backendData[backendData.length - 1].MaxSpacesVisitor
     const currentDatetime = (backendData[backendData.length - 1].time)
     console.log(currentDatetime)
 
