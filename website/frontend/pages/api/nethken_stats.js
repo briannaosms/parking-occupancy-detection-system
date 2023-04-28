@@ -18,10 +18,9 @@ export default async function handler(req,res) {
   });
   // Try block to query data from the database
   try {
-    const query = "SELECT * FROM ParkingLot";
-    const query2 = "SELECT CurrentSpacesFaculty, CurrentSpacesStudent, CurrentSpacesHandicapped, CurrentSpacesVisitor, cast(DT as time) AS time FROM ParkingLot;"
+    const query = "SELECT cast(DT as time) AS time, SUM(CurrentSpacesFaculty+CurrentSpacesStudent+CurrentSpacesHandicapped+CurrentSpacesVisitor) AS total FROM ParkingLot GROUP BY DT;";
     const values = [];
-    const [data] = await db.query(query2, values);
+    const [data] = await db.query(query, values);
     await db.end();
     res.status(200).json({results: data})
   } catch (error) {

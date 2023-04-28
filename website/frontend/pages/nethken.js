@@ -29,11 +29,12 @@ function Details() {
     }, [])
 
     // Values for input boxes
-    const currentFacultyNum = backendData[0].CurrentSpacesFaculty + " / 20"
-    const currentStudentNum = backendData[0].CurrentSpacesStudent + " / 30"
-    const currentHandicappedNum = backendData[0].CurrentSpacesHandicapped + " / 2"
-    const currentVisitorNum = backendData[0].CurrentSpacesVisitor + " / 0"
-    const currentDatetime = backendData[0].Datetime
+    const currentFacultyNum = backendData[backendData.length - 1].CurrentSpacesFaculty + " / 20"
+    const currentStudentNum = backendData[backendData.length - 1].CurrentSpacesStudent + " / 30"
+    const currentHandicappedNum = backendData[backendData.length - 1].CurrentSpacesHandicapped + " / 2"
+    const currentVisitorNum = backendData[backendData.length - 1].CurrentSpacesVisitor + " / 0"
+    const currentDatetime = (backendData[backendData.length - 1].time)
+    console.log(currentDatetime)
 
 
 

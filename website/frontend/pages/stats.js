@@ -19,13 +19,13 @@ function Bar() {
             })*/
         async function getParkingLotData() {
             // Where the api data is located
-            const apiUrlEndpoint = 'https://latechpods.vercel.app/api/nethken_lot';
+            const apiUrlEndpoint = 'https://latechpods.vercel.app/api/nethken_stats';
             // Where the response from the endpoint will be fetched
             const response = await fetch(apiUrlEndpoint);
             // Where the api data from the response will be stored as a JSON Object
             const res = await response.json();
             //console.log(res);
-            //console.log(res.results);
+            console.log(res.results);
             // Where the api data is stored in the backendData variable
             // From Object to array by setting to .results
             setBackendData(res.results);
@@ -33,17 +33,17 @@ function Bar() {
         // Function call
         getParkingLotData();
     }, [])
-    //const total = backendData[1].total;
-    //console.log(total)
+    // const total = backendData[1].total;
+    // console.log(total)
     // const NethEmpty = 30-total
 
 
     //monday chart data
     var nethkenData = useMemo(() => {
         return {
-            labels: backendData.map(time => time.Datetime),
+            labels: backendData.map(time => time.time),
             datasets: [{
-                data: backendData.map(total => (30 - (total.CurrentSpacesStudent))),
+                data: backendData.map(total => (total.total)),
                 label: "Empty parking spaces",
                 fill: true,
                 backgroundColor: "rgba(211,211,211,0.5)",

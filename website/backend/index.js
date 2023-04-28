@@ -34,7 +34,7 @@ app.get('/get', (req, res) => {
 
 app.get('/current', (req, res) => {
     // THIS GETS THE INFORMATION IF YOU WANT DIFFERENT INFO CHANGE THE SQL QUERY
-    const SQL = "SELECT CurrentSpacesFaculty, CurrentSpacesStudent, CurrentSpacesHandicapped, CurrentSpacesVisitor FROM ParkingLot;"
+    const SQL = "SELECT CurrentSpacesFaculty, CurrentSpacesStudent, CurrentSpacesHandicapped, CurrentSpacesVisitor, cast(Datetime as time) AS time FROM ParkingLot;"
     db.query(SQL,function(err, result, fields) {
         if (err){
             console.log(err)
