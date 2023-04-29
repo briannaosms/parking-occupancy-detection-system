@@ -21,14 +21,81 @@ function Home() {
 				Parking Occcupany Detection System (PODS)
 			</h1>
 
-			{/* available parking link */}
-			<div className={styles.card}>
+			<div className={styles.btngroup}>
+				<button>
+				{/* available parking link */}
+					<div>
+						<Link
+							href="/lots"
+							className={styles.card}
+							rel="noopener noreferrer"
+						>
+							<div >
+								<h2 className={inter.className}>
+									Available Parking
+								</h2>
+								<p className={inter.className}>
+									Find available parking lots.
+								</p>
+							</div>
+						</Link>
+					</div>
+				</button>
+
+				<button>
+					{/* parking statistics link */}
+					<div>
+						<Link
+							href="/lots2"
+							rel="noopener noreferrer"
+						>
+							<div>
+								<h2 className={inter.className}>
+									Parking Lot Activity
+								</h2>
+								<p className={inter.className}>
+									Find past parking lot activity.
+								</p>
+							</div>
+						</Link>
+					</div>
+				</button>
+
+				<button>
+					{/* help link */}
+					<div>
+						<Link
+							href="/help"
+							rel="noopener noreferrer"
+						>
+							<div>
+								<h2 className={inter.className}>
+									Help
+								</h2>
+								<p className={inter.className}>
+									Read more about the project.
+								</p>
+							</div>
+						</Link>
+					</div>
+				</button>
+			</div>
+		</>
+	);
+}
+
+export default Home;
+
+/*
+<br></br>
+			<div className={styles.btngroup}>
+			<button>
+			<div>
 				<Link
 					href="/lots"
-					className={styles.card}
 					rel="noopener noreferrer"
 				>
-					<div className={styles.border}>
+					<div>
 						<h2 className={inter.className}>
 							Available Parking
 						</h2>
@@ -38,15 +105,15 @@ function Home() {
 					</div>
 				</Link>
 			</div>
+			</button>
 
-			{/* parking statistics link */}
-			<div className={styles.card}>
+			<button>
+			<div>
 				<Link
 					href="/lots2"
-					className={styles.card}
 					rel="noopener noreferrer"
 				>
-					<div className={styles.border}>
+					<div>
 						<h2 className={inter.className}>
 							Parking Lot Activity
 						</h2>
@@ -55,16 +122,15 @@ function Home() {
 						</p>
 					</div>
 				</Link>
-				</div>
-
-			{/* help link */}
-			<div className={styles.card}>
+			</div>
+			</button>
+			<button>
+			<div>
 				<Link
 					href="/help"
-					className={styles.card}
 					rel="noopener noreferrer"
 				>
-					<div className={styles.border}>
+					<div>
 						<h2 className={inter.className}>
 							Help
 						</h2>
@@ -73,18 +139,16 @@ function Home() {
 						</p>
 					</div>
 				</Link>
-				<br/>
+			</div>
+			</button>
+			</div>
 
-				{/* footer with project creators */}
+			<div className={styles.description}>
 				<p className={inter.className}>
 					<b>Team Ctrl-Alt-Elites</b>
-					<br/>
 						Corey Belk-Scroggins, Brianna Stewart,
 						<br/>Garrett Jones, and Landon Tomkins
 					</p>
 			</div>
-		</>
-	);
-}
 
-export default Home;
+*/
