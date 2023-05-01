@@ -39,7 +39,7 @@ function Help() {
 			<div className={help.headinga}><b>Available Parking</b></div>
 			<div className={help.contenta}>
 				<div className={help.border}>
-					Available Parking shows how many spots are available in the selected parking lot.<br></br>The spots range form Student, Faculty, Handicap, and Visitor parking where applicable.<br></br>The availability is indicated by a ratio of free spots to the total number of spots.<br></br><br></br><i>Eg: [ 1 ] Student<br></br>There is 1 Student parking spot left<br></br></i>
+					Available Parking shows how many spots are available in the selected parking lot.<br></br>The spots range form Student, Faculty, Handicap, and Visitor parking where applicable.<br></br>The availability is indicated by the numerical value next to the parking space type.<br></br><br></br><i>Eg: [ 1 ] Student<br></br>There is 1 Student parking spot left<br></br></i>
 				</div>
 			</div>
 
