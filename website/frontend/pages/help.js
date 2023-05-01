@@ -39,7 +39,7 @@ function Help() {
 			<div className={help.headinga}><b>Available Parking</b></div>
 			<div className={help.contenta}>
 				<div className={help.border}>
-					Available Parking shows how many spots are available in the selected parking lot.<br></br>The spots range form Student, Faculty, Handicap, and Visitor parking where applicable.<br></br>The availability is indicated by a ratio of free spots to the total number of spots.<br></br><br></br><i>Eg: Student 17/30<br></br>There are 17 spots free out of the total of 30<br></br>There are 13 spots that are taken.</i>
+					Available Parking shows how many spots are available in the selected parking lot.<br></br>The spots range form Student, Faculty, Handicap, and Visitor parking where applicable.<br></br>The availability is indicated by a ratio of free spots to the total number of spots.<br></br><br></br><i>Eg: [ 1 ] Student<br></br>There is 1 Student parking spot left<br></br></i>
 				</div>
 			</div>
 
@@ -53,7 +53,7 @@ function Help() {
 			<div className={help.headingb}><b>About PODS</b></div>
 			<div className={help.content}>
 				<div className={help.border}>
-				Parking Lot Occupany Detection System (PODS) is a student led senior project that utilizes AI and machine learning to detect parking lot availability.<br></br>By using object detection, we can map parking spots and determine their availability.<br></br>This information is delivered to a database and sent to the website you are veiwing right now!
+				Parking Occupany Detection System (PODS) is a student led senior project that utilizes AI and machine learning to detect parking lot availability.<br></br>By using object detection, we can map parking spots and determine their availability.<br></br>This information is delivered to a database and sent to the website you are veiwing right now!
 				</div>
 			</div>
 		</>
