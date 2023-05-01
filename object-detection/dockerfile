@@ -1,10 +1,14 @@
-# FROM tensorflow/tensorflow:latest-gpu
 FROM nvcr.io/nvidia/pytorch:21.08-py3
 
-# Update the software
+# Update the software and install required packages
 RUN apt-get update
+# Install required packages for YOLOv7
 RUN apt-get install -y zip htop screen libgl1-mesa-glx
 RUN pip install seaborn thop
+# Install packages for MySQL database
+RUN pip install mysql-connector-python
+# Install packages for ID organization
+RUN pip install matplotlib python-dotenv
 # RUN apt-get upgrade -y
 # RUN apt-get install python3-tk -y
 

@@ -7,6 +7,9 @@
 # ignore creds
 *.env
 
+# ignore output 
+/output/
+
 # dependencies
 /website/node_modules
 /website/.pnp

@@ -3,8 +3,8 @@ services:
   object-detection:
     container_name: object-detection
     build: ./object-detection
-    # environment:
-    #   - PYTHONPATH=:/app
+    environment:
+      - PYTHONPATH=:/app/yolov7
     # user: 1000:1000
     volumes:
       - ./object-detection/datasets:/app/datasets:ro
@@ -21,19 +21,4 @@ services:
     #       devices:
     #         - driver: nvidia
     #           count: 1
-    #           capabilities: [gpu]
-  db:
-    container_name: mysql
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: "${SQL_DATABASE}"
-      MYSQL_PASSWORD: "${SQL_USER_PASSWORD}"
-      MYSQL_USER: "${SQL_USERNAME}"
-      MYSQL_ROOT_PASSWORD: "${SQL_ROOT_PASSWORD}"
-    ports:
-      - '3306:3306'
-    expose:
-      - '3306'
-    volumes:
-      - ./database/data:/var/lib/mysql:rw
+    #           capabilities: [gpu ]
