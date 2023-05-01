@@ -3,9 +3,9 @@ import React from 'react';
 import { push as Menu } from 'react-burger-menu';
 
 
-export default function sidebar() {
+export default () => {
   return (
-    <div className={sidebar.bm_menu}>
+    <div className="sidebar">
       <Menu styles={styles}>
         <Link className="menu-item" href="/">
           Home
@@ -28,39 +28,49 @@ var styles = {
   bmBurgerButton: {
     position: 'fixed',
     width: '36px',
-    height: '30px',
+    height: '36px',
     left: '15px',
     top: '10px',
   },
+
   bmBurgerBars: {
     background: '#676767'
   },
+
   bmBurgerBarsHover: {
     background: '#676767'
   },
+
   bmCrossButton: {
     height: '24px',
     width: '24px'
   },
+
   bmCross: {
     background: '#525252'
   },
+
   bmMenuWrap: {
     position: 'fixed',
     height: '100%',
   },
+
   bmMenu: {
     background: '#c0c0c0',
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em'
+    padding: '2.5em 1.5em 0em',
+    fontSize: '1.5em',
+    
   },
+
   bmMorphShape: {
-    fill: '#676767'
+    fill: '#c0c0c0'
   },
+
   bmItemList: {
     color: 'black',
     padding: '20px',
   },
+
   bm_Item: {
     display: 'inline-block',
     color: '#d1d1d1',
@@ -73,6 +83,7 @@ var styles = {
   bm_item_hover: {
     color: '#ffffff',
   },
+
   bmOverlay: {
     background: 'rgba(0, 0, 0, 0.5)'
   }
