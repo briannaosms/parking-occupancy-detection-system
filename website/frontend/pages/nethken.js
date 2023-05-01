@@ -74,14 +74,15 @@ function Details() {
                 <h2>Available Parking</h2>
                 <form>
                     <label className={lots.timeLabel}>
-                        Last updated on{/*{currentDatetime}*/}
+                        Last updated on <b>{currentDatetime}</b>
                     </label>
+                    {/*
                     <input type="text"
                            // Datetime format needs to be restructured
                            value={currentDatetime}
                            className={lots.timeBox}
                            readOnly 
-                    />
+                    />*/}
                 </form>
                 <br/>
 
