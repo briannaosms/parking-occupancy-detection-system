@@ -56,7 +56,7 @@ function Details() {
 
             {/* navbar title */}
             <div className={lots.navbar}>
-                <h2>Nethken Lot</h2>
+                <h2 className={lots.text}>Nethken Lot</h2>
             </div>
 
 

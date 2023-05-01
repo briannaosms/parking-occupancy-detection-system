@@ -34,7 +34,7 @@ var styles = {
   },
 
   bmBurgerBars: {
-    background: '#676767'
+    background: 'white'
   },
 
   bmBurgerBarsHover: {

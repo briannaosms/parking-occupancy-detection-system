@@ -112,7 +112,7 @@ function Bar() {
 
             {/* navbar title */}
             <div className={lots.navbar}>
-                <h2>Parking Statistics</h2>
+                <h2 className={lots.text}>Parking Statistics</h2>
             </div>
 
 
