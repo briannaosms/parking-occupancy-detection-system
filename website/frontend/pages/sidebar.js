@@ -3,7 +3,7 @@ import React from 'react';
 import { push as Menu } from 'react-burger-menu';
 
 
-export default () => {
+export default function sidebar (){
   return (
     <div className="sidebar">
       <Menu styles={styles}>
