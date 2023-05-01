@@ -39,7 +39,7 @@ function Details() {
     const currentStudentNum = backendData[backendData.length - 1].CurrentSpacesStudent
     const currentHandicappedNum = backendData[backendData.length - 1].CurrentSpacesHandicapped
     const currentVisitorNum = backendData[backendData.length - 1].CurrentSpacesVisitor
-    const currentDatetime = (backendData[backendData.length - 1].time)
+    const currentDatetime = (backendData[backendData.length - 1].DT)
     console.log(currentDatetime)
 
     return (
