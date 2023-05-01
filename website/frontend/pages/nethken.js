@@ -60,7 +60,7 @@ function Details() {
             <div className={lots.content}>
                 {/* parking lot address */}
                 <p>501 Dan Reneau Drive | Ruston, LA 71270</p>
-                
+                <div>
                 {/* parking lot image/map */}
                 <Image
                     src="/parking-lot.jpg"
@@ -68,13 +68,13 @@ function Details() {
                     width={250}
                     alt="Nethken Parking Lot Map"
                 />
-
+                </div>
 
                 {/* available parking & time update */}
                 <h2>Available Parking</h2>
                 <form>
                     <label className={lots.timeLabel}>
-                        Last updated on
+                        Last updated on{/*{currentDatetime}*/}
                     </label>
                     <input type="text"
                            // Datetime format needs to be restructured

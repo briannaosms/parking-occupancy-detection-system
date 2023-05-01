@@ -7,6 +7,13 @@
     min-height: 100vh;
   }
 
+  .team_description {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0
+  }
+
   .description {
     display: inherit;
     justify-content: inherit;
@@ -22,10 +29,9 @@
 
   .context {
     text-align: center;
-    font-size: 30pt;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 50px;
+    width: 100%;
+    font-size: 25pt;
+    padding-bottom: 1%;
   }
 
   .border {
@@ -88,6 +94,14 @@
 }
 
 @media only screen and (max-device-width: 480px) {
+  .context {
+    text-align: center;
+    font-size: 20pt;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+  }
+  
   .border {
     text-align: center;
     border: solid;
@@ -95,6 +109,15 @@
     align-items: center;
     width: 60%;
     margin: auto;
+  }
+
+  .team_description {
+    font-size: 10pt;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding-top: 18%;
   }
 
   .btngroup button {

@@ -23,8 +23,6 @@
     text-decoration: none;
 }
 
-
-
 /* time display text box */
 .timeBox {
     width: 5%;
@@ -51,8 +49,6 @@
     padding-left: 10px;
     text-decoration: none;
 }
-
-
 
 /* sidebar navigation menu */
 .sidebar {
@@ -86,8 +82,6 @@
     background-color: #555;
     color: white;
 }
-
-
 
 /* page content */
 .content {
@@ -131,4 +125,26 @@
 .content a:hover {
     background-color: #ddd;
     color: black;
+}
+
+@media only screen and (max-device-width: 480px) {
+    /* page content */
+    .content {
+        margin-left: 60px;
+        /* margin-top: 0px; */
+        padding: 16px;
+        height: 500px;
+        position: fixed;
+        padding-top: 50px; 
+        width: 100%;
+        padding-left: 0px;
+        text-indent: 10px;
+    }
+
+    /* time display text box */
+    .timeBox {
+        width: 18%;
+        text-align: center;
+        
+    }
 }

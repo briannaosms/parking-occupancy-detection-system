@@ -18,7 +18,7 @@ function Home() {
 			{/* page content */}
 			{/* page main heading/title */}
 			<h1 className={styles.context}>
-				Parking Lot Occcupany Detection System (PODS)
+				Parking Occcupany Detection System (PODS)
 			</h1>
 
 			<div className={styles.btngroup}>
@@ -80,9 +80,9 @@ function Home() {
 					</div>
 				</button>
 			</div>
-			<div className={styles.card}>
+			<div className={styles.team_description}>
 				<p className={inter.className}>
-					<b>Team Ctrl-Alt-Elites: </b>
+					<b>Team Ctrl-Alt-Elites:</b><br/>
 						Corey Belk-Scroggins, Brianna Stewart,
 						<br/>Garrett Jones, and Landon Tomkins
 					</p>
