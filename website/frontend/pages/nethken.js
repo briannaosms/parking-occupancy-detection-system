@@ -39,8 +39,8 @@ function Details() {
     const currentStudentNum = backendData[backendData.length - 1].CurrentSpacesStudent
     const currentHandicappedNum = backendData[backendData.length - 1].CurrentSpacesHandicapped
     const currentVisitorNum = backendData[backendData.length - 1].CurrentSpacesVisitor
-    const currentDatetime = (backendData[backendData.length - 1].time)
-    console.log(currentDatetime)
+    const currentDate = (backendData[backendData.length - 1].date)
+    const currentTime = (backendData[backendData.length - 1].time)
 
     return (
         <>
@@ -78,7 +78,7 @@ function Details() {
                 <h2>Available Parking</h2>
                 <form>
                     <label className={lots.timeLabel}>
-                        Last updated on <b>{currentDatetime}</b>
+                        Last updated on <b>{currentTime}</b>
                     </label>
                     {/*
                     <input type="text"

@@ -19,7 +19,7 @@ export default async function handler(req,res) {
   // Try block to query data from the database
   try {
     const query = "SELECT * FROM ParkingLot";
-    const query2 = "SELECT MaxSpacesFaculty, MaxSpacesStudent, MaxSpacesHandicapped, MaxSpacesVisitor, CurrentSpacesFaculty, CurrentSpacesStudent, CurrentSpacesHandicapped, CurrentSpacesVisitor, cast(DT as time) AS time FROM ParkingLot;"
+    const query2 = "SELECT MaxSpacesFaculty, MaxSpacesStudent, MaxSpacesHandicapped, MaxSpacesVisitor, CurrentSpacesFaculty, CurrentSpacesStudent, CurrentSpacesHandicapped, CurrentSpacesVisitor, cast(DT as date) AS date, cast(DT as time) AS time FROM ParkingLot;"
     const values = [];
     const [data] = await db.query(query2, values);
     await db.end();
