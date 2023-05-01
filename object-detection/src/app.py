@@ -94,7 +94,7 @@ def main():
         max_student = 27
         max_handicapped = 2
         max_visitor = 0
-        dt = datetime.now().strftime(fmt)
+        dt = datetime.now().astimezone(tz).strftime(fmt)
 
         # Determine the taken spots for parking lot based on manual (x,y) mapping.
         taken_faculty, \
