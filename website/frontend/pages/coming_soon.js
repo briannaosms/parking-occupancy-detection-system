@@ -19,7 +19,7 @@ function ComingSoon() {
 
         {/* navbar title */}
         <div className={lots.navbar}>
-            <h2>Coming Soon</h2>
+            <h2 className={lots.text}>Coming Soon</h2>
         </div>
 
         <div className={coming.description}>
