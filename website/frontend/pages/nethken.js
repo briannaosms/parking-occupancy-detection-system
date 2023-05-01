@@ -63,9 +63,9 @@ function Details() {
                 <div>
                 {/* parking lot image/map */}
                 <Image
-                    src="/parking-lot.jpg"
-                    height={250}
-                    width={250}
+                    src="/nethken_parking_lot.jpg"
+                    height={300}
+                    width={300}
                     alt="Nethken Parking Lot Map"
                 />
                 </div>

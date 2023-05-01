@@ -30,7 +30,7 @@
   .context {
     text-align: center;
     width: 100%;
-    font-size: 25pt;
+    font-size: 30pt;
     padding-bottom: 1%;
   }
 
@@ -57,6 +57,14 @@
     background: rgba(var(--card-rgb), 0);
     border: 1px solid rgba(var(--card-border-rgb), 0);
     transition: background 200ms, border 200ms;
+  }
+
+  .btntexta {
+    font-size: 18pt;
+  }
+
+  .btntextb {
+    font-size: 13pt;
   }
 
  .btngroup button {
@@ -96,10 +104,10 @@
 @media only screen and (max-device-width: 480px) {
   .context {
     text-align: center;
-    font-size: 20pt;
+    font-size: 25pt;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
   
   .border {
@@ -112,7 +120,7 @@
   }
 
   .team_description {
-    font-size: 10pt;
+    font-size: 12pt;
     text-align: center;
     width: 100%;
     position: fixed;

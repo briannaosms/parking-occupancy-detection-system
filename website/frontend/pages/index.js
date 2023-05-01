@@ -18,7 +18,7 @@ function Home() {
 			{/* page content */}
 			{/* page main heading/title */}
 			<h1 className={styles.context}>
-				Parking Occcupany Detection System (PODS)
+				Parking Occcupany<br/>Detection System<br/>(PODS)
 			</h1>
 
 			<div className={styles.btngroup}>
@@ -30,12 +30,16 @@ function Home() {
 							className={styles.card}
 							rel="noopener noreferrer"
 						>
-							<div >
+							<div>
 								<h2 className={inter.className}>
+									<div className={styles.btntexta}>
 									Available Parking
+									</div>
 								</h2>
-								<p className={inter.className}>
-									Find available parking in select lots.
+								<p className={styles.btntextb}>
+									<div className={styles.btntextb}>
+									Find available parking lots.
+									</div>
 								</p>
 							</div>
 						</Link>
@@ -49,12 +53,17 @@ function Home() {
 							href="/lots2"
 							rel="noopener noreferrer"
 						>
+
 							<div>
 								<h2 className={inter.className}>
-									Parking Lot Activity
+									<div className={styles.btntexta}>
+									Parking Statistics
+									</div>
 								</h2>
-								<p className={inter.className}>
+								<p className={styles.btntextb}>
+									<div className={styles.btntextb}>
 									Discover past parking lot activity.
+									</div>
 								</p>
 							</div>
 						</Link>
@@ -70,10 +79,14 @@ function Home() {
 						>
 							<div>
 								<h2 className={inter.className}>
+									<div className={styles.btntexta}>
 									Help
+									</div>
 								</h2>
-								<p className={inter.className}>
+								<p className={styles.btntextb}>
+									<div className={styles.btntextb}>
 									Read more about the project.
+									</div>
 								</p>
 							</div>
 						</Link>
