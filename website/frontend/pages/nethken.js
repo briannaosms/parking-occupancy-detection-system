@@ -29,14 +29,18 @@ function Details() {
     }, [])
 
     // Values for input boxes
-    const currentFacultyNum = backendData[backendData.length - 1].CurrentSpacesFaculty + " / " + backendData[backendData.length - 1].MaxSpacesFaculty
+    /*const currentFacultyNum = backendData[backendData.length - 1].CurrentSpacesFaculty + " / " + backendData[backendData.length - 1].MaxSpacesFaculty
     const currentStudentNum = backendData[backendData.length - 1].CurrentSpacesStudent + " / " + backendData[backendData.length - 1].MaxSpacesStudent
     const currentHandicappedNum = backendData[backendData.length - 1].CurrentSpacesHandicapped + " / " + backendData[backendData.length - 1].MaxSpacesHandicapped
     const currentVisitorNum = backendData[backendData.length - 1].CurrentSpacesVisitor + " / " + backendData[backendData.length - 1].MaxSpacesVisitor
     const currentDatetime = (backendData[backendData.length - 1].time)
+    console.log(currentDatetime)*/
+    const currentFacultyNum = backendData[backendData.length - 1].CurrentSpacesFaculty
+    const currentStudentNum = backendData[backendData.length - 1].CurrentSpacesStudent
+    const currentHandicappedNum = backendData[backendData.length - 1].CurrentSpacesHandicapped
+    const currentVisitorNum = backendData[backendData.length - 1].CurrentSpacesVisitor
+    const currentDatetime = (backendData[backendData.length - 1].time)
     console.log(currentDatetime)
-
-
 
     return (
         <>
