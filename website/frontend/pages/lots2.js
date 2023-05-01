@@ -26,7 +26,7 @@ function Lots2() {
 
 			{/* navbar title */}
 			<div className={lots.navbar}>
-				<h2>Parking Lots</h2>
+				<h2>Parking Lots - Parking Statistics</h2>
 			</div>
 
 			

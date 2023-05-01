@@ -10,7 +10,7 @@
 .navbar {
     overflow: auto;
     margin-left: 70px;
-    background-color: #676767;
+    background-color: #0004ff;
     position: fixed;
     width: 100%;
     height: 50px;
@@ -23,7 +23,7 @@
     /* float: left; */
     position: fixed;
     display: block;
-    color: #e4e4e4;
+    color: #ffffff;
     text-align: left;
     padding-left: 16px;
     padding-top: 0px;

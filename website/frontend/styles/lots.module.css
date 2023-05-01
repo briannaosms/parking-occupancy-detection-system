@@ -2,7 +2,8 @@
 .navbar {
     overflow: auto;
     margin-left: 70px;
-    background-color: #676767;
+    background-color: #0004ff;
+    color: white;
     position: fixed;
     width: 100%;
     height: 50px;
@@ -15,7 +16,7 @@
     /* float: left; */
     position: fixed;
     display: block;
-    color: #e4e4e4;
+    color: #ffffff;
     text-align: left;
     padding-left: 16px;
     padding-top: 0px;
@@ -26,7 +27,7 @@
 
 /* time display text box */
 .timeBox {
-    width: 76px;
+    width: 5%;
     text-align: center;
     
 }
@@ -40,7 +41,7 @@
 
 /* parking space display text box */
 .spaceBox {
-    width: 55px;
+    width: 5%;
     text-align: center;
 }
 
@@ -90,20 +91,21 @@
 
 /* page content */
 .content {
-    margin-left: 100px;
+    margin-left: 70px;
     /* margin-top: 0px; */
     padding: 16px;
     height: 500px;
     position: fixed;
     padding-top: 50px; 
     width: 100%;
-    /* padding-right: 16px; */
+    padding-left: 0px;
+    text-indent: 10px;
 }
 
 /* parking lot items */
 .content h3 {
     display: block;
-    color: black;
+    color: rgb(0, 0, 0);
     padding: 4px;
     text-decoration: none;
     font-weight: normal;

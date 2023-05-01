@@ -18,7 +18,7 @@ function Home() {
 			{/* page content */}
 			{/* page main heading/title */}
 			<h1 className={styles.context}>
-				Parking Occcupany Detection System (PODS)
+				Parking Lot Occcupany Detection System (PODS)
 			</h1>
 
 			<div className={styles.btngroup}>
@@ -35,13 +35,13 @@ function Home() {
 									Available Parking
 								</h2>
 								<p className={inter.className}>
-									Find available parking lots.
+									Find available parking in select lots.
 								</p>
 							</div>
 						</Link>
 					</div>
 				</button>
-
+				&nbsp;
 				<button>
 					{/* parking statistics link */}
 					<div>
@@ -54,13 +54,13 @@ function Home() {
 									Parking Lot Activity
 								</h2>
 								<p className={inter.className}>
-									Find past parking lot activity.
+									Discover past parking lot activity.
 								</p>
 							</div>
 						</Link>
 					</div>
 				</button>
-
+				&nbsp;
 				<button>
 					{/* help link */}
 					<div>
@@ -79,6 +79,13 @@ function Home() {
 						</Link>
 					</div>
 				</button>
+			</div>
+			<div className={styles.card}>
+				<p className={inter.className}>
+					<b>Team Ctrl-Alt-Elites: </b>
+						Corey Belk-Scroggins, Brianna Stewart,
+						<br/>Garrett Jones, and Landon Tomkins
+					</p>
 			</div>
 		</>
 	);
@@ -142,7 +149,6 @@ export default Home;
 			</div>
 			</button>
 			</div>
-
 			<div className={styles.description}>
 				<p className={inter.className}>
 					<b>Team Ctrl-Alt-Elites</b>
@@ -150,5 +156,5 @@ export default Home;
 						<br/>Garrett Jones, and Landon Tomkins
 					</p>
 			</div>
-
-*/
+*/ 
+			
