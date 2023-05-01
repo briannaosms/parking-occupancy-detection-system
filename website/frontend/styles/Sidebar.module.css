@@ -9,7 +9,7 @@
   
   /* Color/shape of burger icon bars */
   .bm_burger_bars {
-    background: #373a47;
+    background: #002be9;
   }
   
   /* Color/shape of burger icon bars on hover*/
@@ -39,7 +39,7 @@
   
   /* General sidebar styles */
   .bm_menu{
-    background: #162d92;
+    background: #002fff;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }

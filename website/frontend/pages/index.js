@@ -18,67 +18,71 @@ function Home() {
 			{/* page content */}
 			{/* page main heading/title */}
 			<h1 className={styles.context}>
-				Parking Occcupany Detection System (PODS)
+				Parking Lot Occcupany Detection System (PODS)
 			</h1>
 
-			{/* available parking link */}
-			<div className={styles.card}>
-				<Link
-					href="/lots"
-					className={styles.card}
-					rel="noopener noreferrer"
-				>
-					<div className={styles.border}>
-						<h2 className={inter.className}>
-							Available Parking
-						</h2>
-						<p className={inter.className}>
-							Find available parking lots.
-						</p>
+			<div className={styles.btngroup}>
+				<button>
+				{/* available parking link */}
+					<div>
+						<Link
+							href="/lots"
+							className={styles.card}
+							rel="noopener noreferrer"
+						>
+							<div >
+								<h2 className={inter.className}>
+									Available Parking
+								</h2>
+								<p className={inter.className}>
+									Find available parking in select lots.
+								</p>
+							</div>
+						</Link>
 					</div>
-				</Link>
+				</button>
+				&nbsp;
+				<button>
+					{/* parking statistics link */}
+					<div>
+						<Link
+							href="/lots2"
+							rel="noopener noreferrer"
+						>
+							<div>
+								<h2 className={inter.className}>
+									Parking Lot Activity
+								</h2>
+								<p className={inter.className}>
+									Discover past parking lot activity.
+								</p>
+							</div>
+						</Link>
+					</div>
+				</button>
+				&nbsp;
+				<button>
+					{/* help link */}
+					<div>
+						<Link
+							href="/help"
+							rel="noopener noreferrer"
+						>
+							<div>
+								<h2 className={inter.className}>
+									Help
+								</h2>
+								<p className={inter.className}>
+									Read more about the project.
+								</p>
+							</div>
+						</Link>
+					</div>
+				</button>
 			</div>
-
-			{/* parking statistics link */}
 			<div className={styles.card}>
-				<Link
-					href="/lots2"
-					className={styles.card}
-					rel="noopener noreferrer"
-				>
-					<div className={styles.border}>
-						<h2 className={inter.className}>
-							Parking Lot Activity
-						</h2>
-						<p className={inter.className}>
-							Find past parking lot activity.
-						</p>
-					</div>
-				</Link>
-				</div>
-
-			{/* help link */}
-			<div className={styles.card}>
-				<Link
-					href="/help"
-					className={styles.card}
-					rel="noopener noreferrer"
-				>
-					<div className={styles.border}>
-						<h2 className={inter.className}>
-							Help
-						</h2>
-						<p className={inter.className}>
-							Read more about the project.
-						</p>
-					</div>
-				</Link>
-				<br/>
-
-				{/* footer with project creators */}
 				<p className={inter.className}>
-					<b>Team Ctrl-Alt-Elites</b>
-					<br/>
+					<b>Team Ctrl-Alt-Elites: </b>
 						Corey Belk-Scroggins, Brianna Stewart,
 						<br/>Garrett Jones, and Landon Tomkins
 					</p>
@@ -88,3 +92,69 @@ function Home() {
 }
 
 export default Home;
+
+/*
+<br></br>
+			<div className={styles.btngroup}>
+			<button>
+			<div>
+				<Link
+					href="/lots"
+					rel="noopener noreferrer"
+				>
+					<div>
+						<h2 className={inter.className}>
+							Available Parking
+						</h2>
+						<p className={inter.className}>
+							Find available parking lots.
+						</p>
+					</div>
+				</Link>
+			</div>
+			</button>
+
+			<button>
+			<div>
+				<Link
+					href="/lots2"
+					rel="noopener noreferrer"
+				>
+					<div>
+						<h2 className={inter.className}>
+							Parking Lot Activity
+						</h2>
+						<p className={inter.className}>
+							Find past parking lot activity.
+						</p>
+					</div>
+				</Link>
+			</div>
+			</button>
+			<button>
+			<div>
+				<Link
+					href="/help"
+					rel="noopener noreferrer"
+				>
+					<div>
+						<h2 className={inter.className}>
+							Help
+						</h2>
+						<p className={inter.className}>
+							Read more about the project.
+						</p>
+					</div>
+				</Link>
+			</div>
+			</button>
+			</div>
+			<div className={styles.description}>
+				<p className={inter.className}>
+					<b>Team Ctrl-Alt-Elites</b>
+						Corey Belk-Scroggins, Brianna Stewart,
+						<br/>Garrett Jones, and Landon Tomkins
+					</p>
+			</div>
+*/ 
+			

@@ -30,7 +30,7 @@ var styles = {
     width: '36px',
     height: '30px',
     left: '15px',
-    top: '10px'
+    top: '10px',
   },
   bmBurgerBars: {
     background: '#676767'
@@ -43,14 +43,14 @@ var styles = {
     width: '24px'
   },
   bmCross: {
-    background: '#bdc3c7'
+    background: '#525252'
   },
   bmMenuWrap: {
     position: 'fixed',
-    height: '100%'
+    height: '100%',
   },
   bmMenu: {
-    background: '#676767',
+    background: '#c0c0c0',
     padding: '2.5em 1.5em 0',
     fontSize: '1.15em'
   },
@@ -59,12 +59,12 @@ var styles = {
   },
   bmItemList: {
     color: 'black',
-    padding: '10px',
+    padding: '20px',
   },
   bm_Item: {
     display: 'inline-block',
     color: '#d1d1d1',
-    margin_bottom: '10px',
+    margin_bottom: '20px',
     text_align: 'left',
     text_decoration: 'none',
     transition: 'color 0.2s',
@@ -74,6 +74,6 @@ var styles = {
     color: '#ffffff',
   },
   bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)'
+    background: 'rgba(0, 0, 0, 0.5)'
   }
 }
