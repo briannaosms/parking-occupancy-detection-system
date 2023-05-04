@@ -1,1 +1,1 @@
-python3 app.py 60
+cd src/ && python3 app.py 10
