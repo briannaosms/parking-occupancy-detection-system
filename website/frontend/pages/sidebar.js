@@ -2,23 +2,30 @@ import Link from 'next/link';
 import React from 'react';
 import { push as Menu } from 'react-burger-menu';
 
+import sidebarmenu from '../styles/Sidebar.module.css'
 
 export default function sidebar (){
   return (
     <div className="sidebar">
       <Menu styles={styles}>
+      <div>Pages</div>
+      <hr class='line-height:25px;'></hr>
         <Link className="menu-item" href="/">
-          Home
+          <b>Home</b>
         </Link>
+        <hr class='line-height:25px;'></hr>
         <Link className="menu-item" href="/lots">
-          Available Parking
+          <b>Available Parking</b>
         </Link>
+        <hr class='line-height:25px;'></hr>
         <Link className="menu-item" href="/lots2">
-          Parking Statistics
+          <b>Parking Statistics</b>
         </Link>
+        <hr class='line-height:25px;'></hr>
         <Link className="menu-item" href="/help">
-          Help
+          <b>Help</b>
         </Link>
+        <hr class='line-height:25px;'></hr>
       </Menu>
     </div>
   );
@@ -27,7 +34,7 @@ export default function sidebar (){
 var styles = {
   bmBurgerButton: {
     position: 'fixed',
-    width: '36px',
+    width: '40px',
     height: '36px',
     left: '15px',
     top: '10px',
@@ -43,7 +50,7 @@ var styles = {
 
   bmCrossButton: {
     height: '24px',
-    width: '24px'
+    width: '24px',
   },
 
   bmCross: {
@@ -53,13 +60,12 @@ var styles = {
   bmMenuWrap: {
     position: 'fixed',
     height: '100%',
+    width: '50%'
   },
 
   bmMenu: {
     background: '#c0c0c0',
-    padding: '2.5em 1.5em 0em',
-    fontSize: '1.5em',
-    
+    fontSize: '14pt',    
   },
 
   bmMorphShape: {
@@ -68,7 +74,8 @@ var styles = {
 
   bmItemList: {
     color: 'black',
-    padding: '20px',
+    padding: '10px',
+    padding_top: '10px'
   },
 
   bm_Item: {
@@ -77,14 +84,14 @@ var styles = {
     margin_bottom: '20px',
     text_align: 'left',
     text_decoration: 'none',
-    transition: 'color 0.2s',
+    padding_top: '10px'
   },
 
   bm_item_hover: {
-    color: '#ffffff',
+    color: 'red',
   },
 
   bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.5)'
+    background: 'rgba(0, 0, 0, 0.8)'
   }
 }

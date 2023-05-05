@@ -209,12 +209,12 @@ function Bar() {
                 <h2 className={lots.text}>Parking Statistics</h2>
             </div>
 
-
+            <div className={stats.title}><b>Nethken Lot</b></div>
+            <div className={stats.promptline}><hr></hr></div>
             {/* page content */}
             {/* bar charts */}
             {/* monday */}
             <div className={stats.chart}>
-                <h2>Nethken Stats</h2>
                 <h3>Tuesday</h3>
                 <canvas id='tuesdayNethkenChart'></canvas>
             </div>

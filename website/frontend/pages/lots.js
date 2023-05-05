@@ -26,16 +26,22 @@ function Lots() {
 
 			{/* navbar title */}
 			<div className={lots.navbar}>
-				<h2 className={lots.text}>Available Parking Lots</h2>
+				<h2 className={lots.text}>Available Parking</h2>
 			</div>
 
-			
+			<div className={lots.prompt}>
+			<b>Select a parking lot</b>
+			</div>
+
+			<div className={lots.promptline}><hr></hr></div>
+
             {/* page content */}
-			<div className={lots.content}>
+			<div className={lots.lotlist}>
 				<Link href="/nethken" className={lots.go}>Nethken Lot &#8250;</Link>
 				<Link href="/coming_soon" className={lots.go}>Louisiana Lot &#8250;</Link>
 				<Link href="/coming_soon" className={lots.go}>Dan Reneau Legacy Lot &#8250;</Link>
 			</div>
+
 		</>
 	);
 }

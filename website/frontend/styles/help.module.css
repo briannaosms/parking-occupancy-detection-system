@@ -1,5 +1,5 @@
 .content {
-    margin-left: 70px;
+    margin-left: 15px;
     /* overflow: auto; */
     padding-top: 0px;
     padding-bottom: 0px
@@ -8,7 +8,7 @@
 }
 
 .contenta {
-    margin-left: 70px;
+    margin-left: 15px;
     /* overflow: auto; */
     padding-bottom: 0px
 
@@ -16,14 +16,14 @@
 }
 
 .headinga {
-    margin-left: 70px;
-    padding-top: 55px;
+    margin-left: 15px;
+    padding-top: 65px;
     padding-bottom: 5px;
     font-size: 14pt;
 }
 
 .headingb {
-    margin-left: 70px;
+    margin-left: 15px;
     padding-top: 10px;
     padding-bottom: 5px;
     font-size: 14pt;
@@ -40,7 +40,7 @@
 /* navbar background and positioning*/
 .navbar {
     overflow: auto;
-    margin-left: 70px;
+    margin-left: 0px;
     background-color: #0004ff;
     position: fixed;
     width: 100%;
