@@ -36,7 +36,8 @@ function Bar() {
     }, [])
     
     const tuesdayTimeArr = []
-    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') tuesdayTimeArr.push(backendData[key].Datetime)})
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') tuesdayTimeArr.push(backendData[key].Time)})
+    //console.log(tuesdayTimeArr)
 
     const tuesdayStudentDataArr = []
     Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') tuesdayStudentDataArr.push(backendData[key].MeanStudent)})
@@ -80,10 +81,10 @@ function Bar() {
     }, [backendData]);
 
     const wednesdayTimeArr = []
-    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Wednesday') wednesdayTimeArr.push(backendData[key].Datetime)})
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Wednesday') wednesdayTimeArr.push(backendData[key].Time)})
 
     const wednesdayDataArr = []
-    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') wednesdayDataArr.push(backendData[key].MeanStudent)})
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Wednesday') wednesdayDataArr.push(backendData[key].MeanStudent)})
     //console.log(tuesdayTimeArr)
 
     //monday chart data
@@ -100,7 +101,7 @@ function Bar() {
     }, [backendData]);
 
     const thursdayTimeArr = []
-    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Thursday') thursdayTimeArr.push(backendData[key].Datetime)})
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Thursday') thursdayTimeArr.push(backendData[key].Time)})
 
     const thursdayDataArr = []
     Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Thursday') thursdayDataArr.push(backendData[key].MeanStudent)})
@@ -132,9 +133,9 @@ function Bar() {
                     }
                 },
                 x: {
-                    type: 'time',
+                    //type: 'time',
                     ticks: {
-                        maxTicksLimit: 25,
+                        //maxTicksLimit: 25,
                         color: 'Grey',
                     }
                 },
