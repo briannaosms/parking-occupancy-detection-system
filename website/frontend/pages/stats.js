@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { Chart } from 'chart.js/auto';
+import 'chartjs-adapter-moment';
 import Axios from 'axios';
 import Head from "next/head"
 
@@ -19,7 +20,7 @@ function Bar() {
             })*/
         async function getParkingLotData() {
             // Where the api data is located
-            const apiUrlEndpoint = 'https://latechpods.vercel.app/api/nethken_stats';
+            const apiUrlEndpoint = 'http://localhost:3000/api/nethken_stats';
             // Where the response from the endpoint will be fetched
             const response = await fetch(apiUrlEndpoint);
             // Where the api data from the response will be stored as a JSON Object
@@ -33,21 +34,87 @@ function Bar() {
         // Function call
         getParkingLotData();
     }, [])
-    // const total = backendData[1].total;
-    // console.log(total)
-    // const NethEmpty = 30-total
+    
+    const tuesdayTimeArr = []
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') tuesdayTimeArr.push(backendData[key].Datetime)})
 
+    const tuesdayStudentDataArr = []
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') tuesdayStudentDataArr.push(backendData[key].MeanStudent)})
+
+    // const tuesdayVisitorDataArr = []
+    // Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') tuesdayVisitorDataArr.push(backendData[key].MeanVisitor)})
+
+    // const tuesdayFacultyDataArr = []
+    // Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') tuesdayFacultyDataArr.push(backendData[key].MeanFaculty)})
+
+    // const tuesdayHandicappedDataArr = []
+    // Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') tuesdayHandicappedDataArr.push(backendData[key].MeanHandicapped)})
 
     //monday chart data
-    var nethkenData = useMemo(() => {
+    var tuesdayNethkenData = useMemo(() => {
         return {
-            labels: backendData.map(time => time.time),
+            labels: tuesdayTimeArr,
+            //labels: backendData.map(day => day.Day),
             datasets: [{
-                data: backendData.map(total => (total.total)),
-                label: "Empty parking spaces",
-                fill: true,
-                backgroundColor: "rgba(211,211,211,0.5)",
-                borderColor: "rgb(211,211,211)"
+                data: tuesdayStudentDataArr,
+                label: "Empty Student Spaces",
+                fillColor: "blue",
+                },
+                // {
+                //     data:tuesdayFacultyDataArr,
+                //     label: "Empty Faculty Spaces",
+                //     fillColor: "red",
+                // },
+                // {
+                //     data: tuesdayVisitorDataArr,
+                //     label: "Empty Visitor Spaces",
+                //     fillColor: "red",
+                // },
+                // {
+                //     data: tuesdayHandicappedDataArr,
+                //     label: "Empty Handicapped Spaces",
+                //     fillColor: "grey",
+                // }
+            ]
+        }
+    }, [backendData]);
+
+    const wednesdayTimeArr = []
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Wednesday') wednesdayTimeArr.push(backendData[key].Datetime)})
+
+    const wednesdayDataArr = []
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Tuesday') wednesdayDataArr.push(backendData[key].MeanStudent)})
+    //console.log(tuesdayTimeArr)
+
+    //monday chart data
+    var wednesdayNethkenData = useMemo(() => {
+        return {
+            labels: wednesdayTimeArr,
+            //labels: backendData.map(day => day.Day),
+            datasets: [{
+                data: wednesdayDataArr,
+                label: "Empty Student Spaces",
+                fillColor: "blue",
+            }]
+        }
+    }, [backendData]);
+
+    const thursdayTimeArr = []
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Thursday') thursdayTimeArr.push(backendData[key].Datetime)})
+
+    const thursdayDataArr = []
+    Object.keys(backendData).forEach(key => { if ( backendData[key].Day == 'Thursday') thursdayDataArr.push(backendData[key].MeanStudent)})
+    //console.log(tuesdayTimeArr)
+
+    //monday chart data
+    var thursdayNethkenData = useMemo(() => {
+        return {
+            labels: thursdayTimeArr,
+            //labels: backendData.map(day => day.Day),
+            datasets: [{
+                data: thursdayDataArr,
+                label: "Empty Student Spaces",
+                fillColor: "blue",
             }]
         }
     }, [backendData]);
@@ -55,8 +122,8 @@ function Bar() {
     var nethkenOptions = {
             scales: {
                 y: {
-                    suggestedMin: 0,
-                    suggestedMax: 30,
+                    min: 0,
+                    max: 30,
                     ticks: {
                         color: 'Grey',
                     },
@@ -65,7 +132,9 @@ function Bar() {
                     }
                 },
                 x: {
+                    type: 'time',
                     ticks: {
+                        maxTicksLimit: 25,
                         color: 'Grey',
                     }
                 },
@@ -86,18 +155,42 @@ function Bar() {
         // test.destroy();
         // monday chart
         
-        var ctx = document.getElementById('nethkenChart').getContext('2d');
-        let nethkenChartStatus = Chart.getChart("nethkenChart");
-        if (nethkenChartStatus != undefined) {
-            nethkenChartStatus.destroy();
+        var ctx = document.getElementById('tuesdayNethkenChart').getContext('2d');
+        let tuesdayNethkenChartStatus = Chart.getChart("tuesdayNethkenChart");
+        if (tuesdayNethkenChartStatus != undefined) {
+            tuesdayNethkenChartStatus.destroy();
         }
-        var nethkenChart = new Chart(ctx, {
-            type: 'line',
-            data: nethkenData,
+        var tuesdayNethkenChart = new Chart(ctx, {
+            type: 'bar',
+            data: tuesdayNethkenData,
             options: nethkenOptions,
             
         });
-    }, [nethkenData])
+
+        var ctx = document.getElementById('wednesdayNethkenChart').getContext('2d');
+        let wednesdayNethkenChartStatus = Chart.getChart("wednesdayNethkenChart");
+        if (wednesdayNethkenChartStatus != undefined) {
+            wednesdayNethkenChartStatus.destroy();
+        }
+        var wednesdayNethkenChart = new Chart(ctx, {
+            type: 'bar',
+            data: wednesdayNethkenData,
+            options: nethkenOptions,
+            
+        });
+
+        var ctx = document.getElementById('thursdayNethkenChart').getContext('2d');
+        let thursdayNethkenChartStatus = Chart.getChart("thursdayNethkenChart");
+        if (thursdayNethkenChartStatus != undefined) {
+            thursdayNethkenChartStatus.destroy();
+        }
+        var thursdayNethkenChart = new Chart(ctx, {
+            type: 'bar',
+            data: thursdayNethkenData,
+            options: nethkenOptions,
+            
+        });
+    }, [tuesdayNethkenData])
 
     return (
         <>
@@ -121,7 +214,18 @@ function Bar() {
             {/* monday */}
             <div className={stats.chart}>
                 <h2>Nethken Stats</h2>
-                <canvas id='nethkenChart'></canvas>
+                <h3>Tuesday</h3>
+                <canvas id='tuesdayNethkenChart'></canvas>
+            </div>
+
+            <div className={stats.chart}>
+                <h3>Wednesday</h3>
+                <canvas id='wednesdayNethkenChart'></canvas>
+            </div>
+
+            <div className={stats.chart}>
+                <h3>Thursday</h3>
+                <canvas id='thursdayNethkenChart'></canvas>
             </div>
         </>
     )

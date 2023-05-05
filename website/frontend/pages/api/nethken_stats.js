@@ -18,9 +18,11 @@ export default async function handler(req,res) {
   });
   // Try block to query data from the database
   try {
-    const query = "SELECT cast(DT as time) AS time, SUM(CurrentSpacesFaculty+CurrentSpacesStudent+CurrentSpacesHandicapped+CurrentSpacesVisitor) AS total FROM ParkingLot GROUP BY DT;";
+    const query = "SELECT UNIX_TIMESTAMP(DT) * 1000 AS time, SUM(CurrentSpacesFaculty+CurrentSpacesStudent+CurrentSpacesHandicapped+CurrentSpacesVisitor) AS total FROM ParkingLot GROUP BY DT;";
+    const query2 = "SELECT cast(DT as time) AS time, SUM(CurrentSpacesStudent) AS total FROM ParkingLot GROUP BY DT;";
+    const query3 = "SELECT * FROM ParkingStatistics;"
     const values = [];
-    const [data] = await db.query(query, values);
+    const [data] = await db.query(query3, values);
     await db.end();
     res.status(200).json({results: data})
   } catch (error) {
