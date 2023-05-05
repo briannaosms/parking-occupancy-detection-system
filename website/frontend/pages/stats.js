@@ -20,7 +20,7 @@ function Bar() {
             })*/
         async function getParkingLotData() {
             // Where the api data is located
-            const apiUrlEndpoint = 'http://localhost:3000/api/nethken_stats';
+            const apiUrlEndpoint = 'https://latechpods.vercel.app/api/nethken_stats';
             // Where the response from the endpoint will be fetched
             const response = await fetch(apiUrlEndpoint);
             // Where the api data from the response will be stored as a JSON Object
